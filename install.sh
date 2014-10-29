@@ -13,3 +13,5 @@ cp ${SRC}/gtkrc-2.0 ${HOME}/.gtkrc-2.0
 
 mkdir -p ${HOME}/.config/gtk-3.0
 cp ${SRC}/settings.ini ${HOME}/.config/gtk-3.0/
+
+cp ${SRC}/Xdefaults ${HOME}/.Xdefaults
