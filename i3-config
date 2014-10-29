@@ -127,6 +127,8 @@ assign [class="^URxvt$"] 1
 
 for_window [class="^URxvt$"] border 1pixel
 
+# exec on startup -> gnome confort
+exec --no-startup-id /usr/libexec/gnome-settings-daemon
 # exec on startup
 exec --no-startup-id setxkbmap fr
 exec --no-startup-id xsetroot -solid '#002b36'
