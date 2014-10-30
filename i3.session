@@ -1,0 +1,4 @@
+# file /usr/share/gnome-session/sessions/i3.session
+[GNOME Session]
+Name=gnome-i3
+RequiredComponents=gnome-settings-daemon;gnome-panel;i3;
