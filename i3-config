@@ -112,6 +112,18 @@ bar {
     tray_output VGA-1
     position top
     status_command i3status -c ~/.i3/i3status.conf
+    
+     colors {
+        background #002b36
+        statusline #839496
+        separator  #839496
+
+        #focused_workspace  #002b36 #859900 #eee8d5
+        focused_workspace  #002b36 #268bd2 #eee8d5
+        active_workspace   #002b36 #839496 #002b36
+        inactive_workspace #002b36 #002b36 #839496
+        urgent_workspace   #002b36 #dc322f #eee8d5
+    }
 }
 
 focus_follows_mouse no
@@ -137,4 +149,5 @@ exec --no-startup-id xsetroot -solid '#002b36'
 exec --no-startup-id pactl set-sink-volume 0 '0%'
 exec --no-startup-id xset dpms 300 0 0
 exec --no-startup-id xset -b
+exec dunst
 exec i3-sensible-terminal
