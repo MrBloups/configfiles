@@ -15,3 +15,6 @@ mkdir -p ${HOME}/.config/gtk-3.0
 cp ${SRC}/settings.ini ${HOME}/.config/gtk-3.0/
 
 cp ${SRC}/Xdefaults ${HOME}/.Xdefaults
+
+mkdir -p ${HOME}/.config/dunst
+cp ${SRC}/dunstrc ${HOME}/.config/dunst/
