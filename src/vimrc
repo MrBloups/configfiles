@@ -1,7 +1,7 @@
 syntax on
 
 "set t_Co=256
-set t_Co=88
+"set t_Co=88
 set nocompatible
 "set background=dark
 set ttyfast
