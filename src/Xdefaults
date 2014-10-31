@@ -33,6 +33,9 @@ URxvt.scrollBar: false
 URxvt.secondaryScreen: 1
 URxvt.secondaryScroll: 0
 
+# important for solarized
+URxvt.intensityStyles: false
+
 # disable perl
 URxvt.perl-ext:
 URxvt.perl-ext-common:
