@@ -10,7 +10,8 @@ set nowrap
 
 " show line number
 set nu
-hi LineNr ctermfg=darkgray
+"hi LineNr ctermfg=darkgray
+hi LineNr ctermbg=black ctermfg=cyan
 
 " status bar
 set wildmenu
@@ -43,3 +44,9 @@ set ffs=unix,dos,mac
 set nobackup
 set nowb
 set noswapfile
+
+" search
+set ignorecase
+set smartcase
+set incsearch
+set hlsearch
