@@ -1,7 +1,11 @@
 # path ~/.vimperatorrc
-set gui=none,tabs,bookmarks
+
+set gui=none,tabs,navigation,bookmarks
 set noscrollbars
 set showmode
+set complete=Sb
+"set maxitems=10
+"set defsearch=duckduckgo
 
 set hintchars='azertyqsdfghj'
 highlight Hint font: bold 12px Terminus; color: #a04d3f; background: #f7941d; border-radius: 4px; padding: 2px;
