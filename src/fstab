@@ -1,0 +1,7 @@
+# file /etc/fstab
+# WORK IN PROGRESS...
+tmpfs /tmp       tmpfs defaults,noatime,size=512M,mode=1777  0 0
+tmpfs /var/spool tmpfs defaults,noatime,size=512M,mode=1777  0 0
+tmpfs /var/tmp   tmpfs defaults,noatime,size=512M,mode=1777  0 0
+tmpfs /var/log   tmpfs defaults,noatime,size=512M,mode=0755  0 0
+
