@@ -6,46 +6,43 @@
 # ß
 # If the above line is not correctly displayed, fix your editor first!
 
+# special char: 🔊📶🔋🔇💡◆
+
 general {
     colors = true
     color_good = "#859900"
-    color_degraded = "#b58900"
+    color_degraded = "#657b83"
     color_bad = "#dc322f"
     interval = 5
 }
 
+order += "tztime local"
 order += "wireless wlp2s0"
 order += "battery 1"
-order += "tztime local"
-order += "tztime date"
 order += "volume master"
 
 wireless wlp2s0 {
-    #format_up = "W: (%quality at %essid) %ip"
-    #format_down = "W: down"
-    format_up = "%essid"
-    format_down = "Wifi off"
+    format_up = " 📶 %essid "
+    format_down = " 📶 Off "
 }
 
 battery 1 {
     #format = "%status %percentage %remaining"
     integer_battery_capacity = true
-    format = "%remaining"
+    format = " 🔋 %percentage %remaining "
+    low_threshold = 20
+    threshold_type = percentage
 }
 
 tztime local {
     #format = "%Y-%m-%d %H:%M:%S"
-    format = "%H:%M"
-}
-
-tztime date {
-    #format = "%Y-%m-%d %H:%M:%S"
-    format = "%d-%m-%Y"
+    #format = " ◆ %A %d %B ◆ %H:%M "
+    format = " 💡 %A %d %B %H:%M "
 }
 
 volume master {
-    format = "♪ %volume"
-    format_muted = "Mute"
+    format = " 🔊 %volume "
+    format_muted = " 🔇 %volume "
     device = "default"
     mixer = "Master"
     mixer_idx = 0

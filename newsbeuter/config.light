@@ -1,0 +1,15 @@
+# GUI
+color listfocus         white   black
+color listnormal_unread blue    default
+color listfocus_unread  white   blue
+color info              default default bold
+
+# Others options
+browser            firefox
+cleanup-on-quit    yes
+datetime-format    "%d %b"
+download-full-page yes
+download-retries   10
+keep-articles-days 5
+refresh-on-startup yes
+
