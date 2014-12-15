@@ -1,7 +1,7 @@
 # GUI
-color listfocus         white   black
+color listfocus         default default reverse
 color listnormal_unread blue    default
-color listfocus_unread  white   blue
+color listfocus_unread  black   blue
 color info              default default bold
 
 # Others options

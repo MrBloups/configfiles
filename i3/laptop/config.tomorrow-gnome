@@ -184,7 +184,8 @@ client.unfocused        $bg  $bg  $com   $bg
 client.urgent           $red $red $white $red
 
 # assign to workspace
-assign [class="^URxvt$"] 1
+#assign [class="^URxvt$"] 1
+assign [class="^Gnome-terminal$"] 1
 assign [class="^Firefox$"] 2
 
 mouse_warping none
@@ -223,7 +224,7 @@ exec --no-startup-id xset dpms 60 0 0
 exec --no-startup-id xbacklight -set 10
 exec --no-startup-id pactl set-sink-volume 0 '50%'
 exec --no-startup-id pactl set-sink-mute 0 1
-exec --no-startup-id xcompmgr
+exec --no-startup-id xcompmgr -n
 exec --no-startup-id unclutter
 #exec --no-startup-id urxvtd -q -o -f ; urxvtc
 exec --no-startup-id gnome-terminal
