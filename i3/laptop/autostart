@@ -1,0 +1,4 @@
+#!/binsh
+
+pactl set-sink-volume 0 '20%' &
+xset dpms 10 20 30 &
