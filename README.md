@@ -23,7 +23,3 @@ Disable gdm user list
 
     sudo -u gdm dbus-launch gsettings set org.gnome.login-screen disable-user-list true
 
-H.264 HTML5 video
-=================
-
-* http://martin.preisler.me/2014/08/h264-html5-video-in-firefox-on-fedora-20
