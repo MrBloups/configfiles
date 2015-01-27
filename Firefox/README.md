@@ -14,7 +14,7 @@ Exemple for fedora:
 Stop GIF Image Animation
 ------------------------
 
-Go to about:config and change the value of string **image.animation_mode** from **normal** to **none**
+Go to about:config and change the value of string **image.animation_mode** from **normal** to **none**.
 
 Useful links
 ------------
