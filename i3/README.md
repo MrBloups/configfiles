@@ -1,11 +1,11 @@
-TIPS
-====
+Tweaks
+======
 
 Gnome-setting-daemon
 --------------------
 
 You can use gnome-settings-daemon for better integration.
-In your ~/.i3/config, add:
+In your **~/.i3/config**, add:
 
     exec --no-startup-id /usr/libexec/gnome-settings-daemon
 
