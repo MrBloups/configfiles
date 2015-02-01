@@ -3,6 +3,15 @@ Firefox tweaks
 
 Some tweaks for optimise Firefox...
 
+About:config
+------------
+
+Some values to tweak on about:config.
+
+browser.sessionstore.interval 60000
+image.animation_mode: none
+network.prefetch-next: false
+
 Spell checking
 --------------
 
