@@ -8,7 +8,7 @@ About:config
 
 Some values to tweak on about:config.
 
-* browser.sessionstore.interval 60000
+* browser.sessionstore.interval: 60000
 * image.animation_mode: none
 * network.prefetch-next: false
 
