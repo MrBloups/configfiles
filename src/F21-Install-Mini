@@ -1,0 +1,6 @@
+yum install vim
+yum install @base-x
+yum install i3 i3status i3lock
+yum install adwaita-{gtk2,cursor}-theme abattis-cantarell-fonts faience-icon-theme
+yum install firefox hunspell-fr
+#yum install pcmanfm
