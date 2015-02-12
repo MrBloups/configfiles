@@ -3,6 +3,15 @@ Firefox tweaks
 
 Some tweaks for optimise Firefox...
 
+Addons
+------
+
+* NoScripts
+* HTTPS-Everywhere
+* Ghostery
+* Vimperator
+* Quick Translator
+
 About:config
 ------------
 
