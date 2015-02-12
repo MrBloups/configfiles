@@ -1,3 +1,5 @@
+# path $HOME/.gtkrc-2.0
+
 gtk-theme-name = "Adwaita"
 gtk-icon-theme-name = "Faience"
 gtk-cursor-theme-name="Adwaita"
