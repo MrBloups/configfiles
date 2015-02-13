@@ -176,8 +176,19 @@ bar {
     colors {
         background #1d1f21
         statusline #c5c8c6
+
+        focused_workspace  #4c7899 #4c7899 #ffffff
+        active_workspace   #1d1f21 #1d1f21 #969896
+        inactive_workspace #1d1f21 #1d1f21 #969896
+        urgent_workspace   #cc6666 #cc6666 #ffffff
     }
 }
+
+# window decoration
+client.focused          #4c7899 #4c7899 #ffffff #4c7899
+client.focused_inactive #1d1f21 #1d1f21 #969896 #1d1f21
+client.unfocused        #1d1f21 #1d1f21 #969896 #1d1f21
+client.urgent           #cc6666 #cc6666 #ffffff #cc6666
 
 new_window 1pixel
 new_float 1pixel
