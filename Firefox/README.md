@@ -11,6 +11,7 @@ Addons
 * Ghostery
 * Vimperator
 * Quick Translator
+* µBlock (https://github.com/gorhill/uBlock)
 
 About:config
 ------------
