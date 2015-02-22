@@ -28,9 +28,13 @@ Xcalib
 ------
 
 Install Xcalib
+
     yum install xcalib
 
-Get the icc profile for you screen back.  
-For example http://www.notebookcheck.net/uploads/tx_nbc2/Lenovo_S300_glare_1366x768__LG_Display_LP133WH2_TLE1_.icc
+Get the icc profile for you screen back.
 
+    wget http://www.notebookcheck.net/uploads/tx_nbc2/Lenovo_S300_glare_1366x768__LG_Display_LP133WH2_TLE1_.icc
 
+Use
+
+    xcalib -clear ; xcalib ICCPROFILE
