@@ -38,3 +38,18 @@ Get the icc profile for your screen back.
 And use
 
     xcalib -clear ; xcalib ICCPROFILE
+
+Manage your connexion wifi with nmcli
+-------------------------------------
+First, make sure you are NetworkManager for Wifi
+
+    yum install NetworkManager-wifi
+
+Next, create and configure your connexion
+
+    nmcli con dev wifi list con-name YOUR_CON_NAME ifname YOUR_INTERFACE type wifi ssid YOUR_SSID
+    nmcli con modify MonWifi 802-11-wireless.hidden yes
+    nmcli con modify MonWifi wifi-sec.key-mgmt wpa-psk
+    nmcli con modify MonWifi wifi-sec.psk YOUR_PASSWORD
+    
+    nmcli con up YOUR_CON_NAME
