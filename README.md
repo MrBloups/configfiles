@@ -27,14 +27,14 @@ Disable gdm user list
 Xcalib
 ------
 
-Install Xcalib
+Xcalib is a tool for calibrate a screen manually or from an icc profile. Install it.
 
-    yum install xcalib
+    sudo yum install xcalib
 
 Get the icc profile for you screen back.
 
     wget http://www.notebookcheck.net/uploads/tx_nbc2/Lenovo_S300_glare_1366x768__LG_Display_LP133WH2_TLE1_.icc
 
-Use
+And use
 
     xcalib -clear ; xcalib ICCPROFILE
