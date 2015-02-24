@@ -54,6 +54,11 @@ function uptime_time()
 # Prompt
 PS1="┌[\$(battery_status)]-[\$(uptime_time)]-[\e[34m\u@\h: \w\e[0m]\n└ \$ "
 
+# vim
+EDITOR=vim
+VISUAL=$EDITOR
+export EDITOR VISUAL
+
 # gnome-keyring
 if [ -n "$DESKTOP_SESSION" ];then
     eval $(gnome-keyring-daemon --start)
