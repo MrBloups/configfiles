@@ -2,12 +2,16 @@
 
 # Source global definitions
 if [ -f /etc/bashrc ]; then
-    . /etc/bashrc
+	. /etc/bashrc
 fi
+
+# Uncomment the following line if you don't like systemctl's auto-paging feature:
+# export SYSTEMD_PAGER=
 
 # User specific aliases and functions
 
-## Functions
+source /usr/share/git-core/contrib/completion/git-prompt.sh
+GIT_PS1_SHOWDIRTYSTATE=1
 
 # show battery status (need acpi)
 #   charging (+) or discharging (-)
@@ -15,22 +19,19 @@ fi
 #   autonomy when discharging
 function battery_status()
 {
-    ACPI=`acpi`
-
     BATTERY="/sys/class/power_supply/BAT1"
     CAPACITY=`cat ${BATTERY}/capacity`
     STATUS=`cat ${BATTERY}/status`
 
     case "${STATUS:0:1}" in
     "C") STATUS="+"
-         AUTONOMY="--:--:--" ;;
+         ;;
     "D") STATUS="-"
-         AUTONOMY=`echo $ACPI | cut -d' ' -f5`
          COLOR1="\e[0;33m" ;;
     "F") STATUS="="
-         AUTONOMY="--:--:--" ;;
+         ;;
       *) STATUS="#"
-         AUTONOMY="--:--:--" ;;
+         ;;
     esac
 
     COLOR0="\e[0m"
@@ -38,7 +39,7 @@ function battery_status()
     [ "$CAPACITY" -ge 80 ] && COLOR1="\e[0;32m"
     [ "$CAPACITY" -lt 20 ] && COLOR1="\e[0;31m"
 
-    echo -e "$COLOR1$STATUS$CAPACITY% $AUTONOMY$COLOR0"
+    echo -e "$COLOR1$STATUS$CAPACITY%$COLOR0"
 }
 
 function uptime_time()
@@ -52,15 +53,25 @@ function uptime_time()
 }
 
 # Prompt
-PS1="┌[\$(battery_status)]-[\$(uptime_time)]-[\e[34m\u@\h: \w\e[0m]\n└ \$ "
+export PS1='┌[$(uptime_time)]-[\e[34m\u@\h: \w$(__git_ps1)\e[0m]\n└ \$ '
+
+# urxvt
+if [[ "$TERM" =~ ^rxvt ]]; then
+    PROMPT_COMMAND='echo -ne "\e]0;$USER@$HOSTNAME:$PWD\007"'
+fi
 
 # vim
 EDITOR=vim
 VISUAL=$EDITOR
 export EDITOR VISUAL
 
-# gnome-keyring
-if [ -n "$DESKTOP_SESSION" ];then
+# gnome-keyring for i3
+if [ "$DESKTOP_SESSION" = "i3" ]; then
     eval $(gnome-keyring-daemon --start)
     export SSH_AUTH_SOCK
 fi
+
+
+# alias
+alias update="su -c 'yum update'"
+alias up='nmcli connection up $1'
