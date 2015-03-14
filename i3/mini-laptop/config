@@ -68,10 +68,10 @@ bindsym $mod+Shift+Up move up
 bindsym $mod+Shift+Right move right
 
 # split in horizontal orientation
-bindsym $mod+h split h
+bindsym $mod+h split v
 
 # split in vertical orientation
-bindsym $mod+v split v
+bindsym $mod+v split h
 
 # enter fullscreen mode for the focused container
 bindsym $mod+f fullscreen
@@ -172,7 +172,10 @@ bindsym $mod+r mode $resize
 # finds out, if available)
 bar {
     position top
-        status_command i3status -c ~/.i3/i3status.conf
+    #tray_output primary
+    status_command i3status -c ~/.i3/i3status.conf
+    wheel_up_cmd nop
+    wheel_down_cmd nop
     colors {
         background #1d1f21
         statusline #c5c8c6
@@ -180,7 +183,6 @@ bar {
         focused_workspace  #4c7899 #4c7899 #ffffff
         active_workspace   #1d1f21 #1d1f21 #969896
         inactive_workspace #1d1f21 #1d1f21 #969896
-        #urgent_workspace   #cc6666 #cc6666 #ffffff
         urgent_workspace   #900000 #900000 #ffffff
     }
 }
@@ -195,6 +197,9 @@ new_window 1pixel
 new_float 1pixel
 hide_edge_borders both
 popup_during_fullscreen smart
+
+assign [class="URxvt"] 1
+assign [class="Firefox"] 2
 
 #bindsym $mod+m move scratchpad
 #bindsym $mod+o scratchpad show
@@ -212,6 +217,7 @@ bindsym XF86MonBrightnessUp exec xbacklight -inc 5
 bindsym XF86MonBrightnessDown exec xbacklight -dec 5
 
 exec --no-startup-id /usr/libexec/gnome-settings-daemon
+exec --no-startup-id xcalib -clear ; xcalib ~/i3/profile.icc
 exec --no-startup-id pactl set-sink-volume 0 '50%'
 exec --no-startup-id pactl set-sink-mute 0 1
 exec --no-startup-id xbacklight -set 10
