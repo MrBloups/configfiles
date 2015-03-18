@@ -23,8 +23,8 @@ do
     if [ "$bstatus" = "$STATUS" ]; then
         if [ "$bcapacity" -le $MINI ]; then
             if [ "$show" != true ]; then
-                /usr/bin/i3-msg mode $MODE
                 show=true
+                /usr/bin/i3-msg mode $MODE
             fi
         fi
     fi
