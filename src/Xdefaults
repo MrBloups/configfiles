@@ -7,6 +7,7 @@
 #Xft.hinting:	1
 #Xft.hintstyle:	hintslight
 #Xft.rgba:	none
+# optionnel Xft.lcdfilter:	lcddefault or lcdlegacy
 
 ## urxvt configuration
 
