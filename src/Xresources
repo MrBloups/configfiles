@@ -50,16 +50,14 @@ Xft.rgba:      none
 #define S_base3   #002b36
 
 
-! Apply solarized colors scheme to urxvt --------------------------------------
+! Urxvt setting solarized colors scheme ---------------------------------------
 
 URxvt*background:  S_base03
 URXvt*foreground:  S_base0
 
-URxvt*fading:     40
-URxvt*fadeColor:  S_base03
-
-URxvt*cursorColor:  S_base1
-
+URxvt*fading:                  40
+URxvt*fadeColor:               S_base03
+URxvt*cursorColor:             S_base1
 URxvt*pointerColorBackground:  S_base01
 URxvt*pointerColorForeground:  S_base1
 
@@ -84,14 +82,12 @@ URxvt*color15:  S_base3
 ! Urxvt setting ---------------------------------------------------------------
 
 URxvt.imLocale:         fr_FR.utf8
-! URxvt.font:             xft:Terminus-12:antialias=false
-URxvt.font:             -xos4-terminus-medium-r-*-*-14-*
+! URxvt.font:             -xos4-terminus-medium-r-*-*-14-*
+URxvt.font:             xft:Terminus-12:antialias=false
 URxvt.scrollBar:        false
 URxvt.secondaryScreen:  1
 URxvt.secondaryScroll:  0
 URxvt.saveLines:        65535
-! important for solarized
-URxvt.intensityStyles:  false
-! disable perl
-URxvt.perl-ext:
-URxvt.perl-ext-common:
+URxvt.intensityStyles:  false  ! important for solarized color scheme
+URxvt.perl-ext:                ! disable perl
+URxvt.perl-ext-common:         ! disable perl
