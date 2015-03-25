@@ -1,6 +1,7 @@
 ! path  ~/.Xresources
 ! usage xrdb ~/.Xressouces
 
+
 ! Grayscale xft setting -------------------------------------------------------
 
 Xft.antialias: 1
