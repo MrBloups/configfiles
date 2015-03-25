@@ -1,3 +1,5 @@
+## IMPORTANT: Obsolete use Xresources
+
 ## globale configuration
 
 # grayscale xft (xrdb -query)
