@@ -83,12 +83,13 @@ URxvt*color15:  S_base3
 ! Urxvt setting ---------------------------------------------------------------
 
 URxvt.imLocale:         fr_FR.utf8
-! URxvt.font:             -xos4-terminus-medium-r-*-*-14-*
 URxvt.font:             xft:Terminus-12:antialias=false
 URxvt.scrollBar:        false
 URxvt.secondaryScreen:  1
 URxvt.secondaryScroll:  0
 URxvt.saveLines:        65535
-URxvt.intensityStyles:  false  ! important for solarized color scheme
-URxvt.perl-ext:                ! disable perl
-URxvt.perl-ext-common:         ! disable perl
+! important for solarized color scheme
+URxvt.intensityStyles:  false
+! disable perl
+URxvt.perl-ext:
+URxvt.perl-ext-common:
