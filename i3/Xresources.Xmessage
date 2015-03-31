@@ -1,0 +1,18 @@
+! Xmessage setting for notification battery
+!
+! Usage: xmessage "Le niveau de la batterie est trop faible..."
+!
+! in i3 config add:
+! for_window [class="Xmessage"] floating enable
+! for_window [class="Xmessage"] border none
+!
+Xmessage*font: -*-terminus-medium-*-*-*-14-*-*-*-*-*-*-*
+Xmessage*timeout: 30
+Xmessage*buttons:
+Xmessage*message*scrollVertical: Never
+Xmessage*message*scrollHorizontal: Never
+Xmessage*background: #900000
+Xmessage*foreground: #ffffff
+Xmessage*borderWidth: 0
+Xmessage*text*borderWidth: 0
+Xmessage*Geometry: 400x10+1514+26
