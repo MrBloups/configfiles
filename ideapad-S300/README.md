@@ -18,13 +18,18 @@ RPM
 Systemd
 --------
 journald in RAM
+
     [root]# sed -i "/#Storage=auto/a Storage=volatile" /etc/systemd/journald.conf
+
 Only 2 tty
+
     [root]# sed -i "/#NAutoVTs=6/a NAutoVTs=2" /etc/systemd/logind.conf
+
 
 Grub2
 -----
 Fullscreen grub menu
+
     [root]# sed -i '/GRUB_TERMINAL_OUTPUT/ s/^/#/' /etc/default/grub
     [root]# sed -i '/GRUB_CMDLINE_LINUX/ s/^/#/' /etc/default/grub
     [root]# sed -i '/GRUB_CMDLINE_LINUX/a GRUB_CMDLINE_LINUX="rhgb quiet i915.lvds_downclock=1 i915.enable_fbc=1 i915.enable_rc6=1 drm.vblankoffdelay=1"' /etc/default/grub
@@ -33,6 +38,7 @@ Fullscreen grub menu
 Yum
 ---
 Backup two kernels instead of three
+
     [root]# sed -i '/^installonly_limit/ s/2/3/' /etc/yum.conf
 
 Selinux
@@ -48,4 +54,5 @@ Fstab
 Gdm
 ---
 Disable user list
+
     sudo -u gdm dbus-launch gsettings set org.gnome.login-screen disable-user-list true
