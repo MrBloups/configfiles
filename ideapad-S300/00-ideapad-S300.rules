@@ -1,0 +1,15 @@
+## udev rules for ideapad S300
+## path /etc/udev/rules.d/00-ideapad-S300.rules
+
+# hard disk
+SUBSYSTEM=="scsi_host", KERNEL=="host*", ATTR{link_power_management_policy}="min_power"
+
+# pci
+ACTION=="add", SUBSYSTEM=="pci", ATTR{power/control}="auto"
+
+# usb
+ACTION=="add", SUBSYSTEM=="usb", TEST=="power/control", ATTR{power/control}="auto"
+ACTION=="add", SUBSYSTEM=="usb", TEST=="power/autosuspend", ATTR{power/autosuspend}="2"
+
+# bluetooth
+SUBSYSTEM=="rfkill", ATTR{type}=="bluetooth", ATTR{state}=="0"

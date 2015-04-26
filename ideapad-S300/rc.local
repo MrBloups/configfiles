@@ -1,0 +1,17 @@
+#!/bin/sh
+
+## rc.local for ideapad S300
+## work with systemd service rc-local
+## path /etc/rc.d/rc.local
+#
+## INSTALL
+## chmod 755 /etc/rc.d/rc.local
+## chown root:root /etc/rc.d/rc.local
+## systemctl enable rc-local
+
+#/usr/sbin/iw dev wlp2s0 set power_save on
+sleep 5
+/usr/sbin/ethtool -s enp1s0 autoneg off speed 100
+/usr/sbin/ethtool -s enp1s0 wol d
+
+exit 0
