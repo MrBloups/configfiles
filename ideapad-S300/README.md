@@ -32,7 +32,7 @@ Fullscreen grub menu
 
     [root]# sed -i '/GRUB_TERMINAL_OUTPUT/ s/^/#/' /etc/default/grub
     [root]# sed -i '/GRUB_CMDLINE_LINUX/ s/^/#/' /etc/default/grub
-    [root]# sed -i '/GRUB_CMDLINE_LINUX/a GRUB_CMDLINE_LINUX="rhgb quiet i915.lvds_downclock=1 i915.enable_fbc=1 i915.enable_rc6=1 drm.vblankoffdelay=1"' /etc/default/grub
+    [root]# sed -i '/GRUB_CMDLINE_LINUX/a GRUB_CMDLINE_LINUX="rhgb quiet i915.lvds_downclock=1 i915.enable_fbc=1 i915.enable_rc6=7 drm.vblankoffdelay=1"' /etc/default/grub
     [root]# grub2-mkconfig -o /boot/efi/EFI/fedora/grub.cfg
 
 Yum
@@ -55,4 +55,4 @@ Gdm
 ---
 Disable user list
 
-    sudo -u gdm dbus-launch gsettings set org.gnome.login-screen disable-user-list true
+    [root]# sudo -u gdm dbus-launch gsettings set org.gnome.login-screen disable-user-list true

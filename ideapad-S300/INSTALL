@@ -15,6 +15,8 @@ cp -i -v 00-$ID.rules /etc/udev/rules.d/
 cp -i -v 10-$ID.conf /etc/sysctl.d/
 cp -i -v $ID.conf /etc/modprobe.d/
 cp -i -v rc.local /etc/rc.d/
+chmod 755 /etc/rc.d/rc.local
+systemctl enable rc-local
 
 
 ## tweak
