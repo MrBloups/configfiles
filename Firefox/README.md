@@ -11,7 +11,7 @@ Addons
 * Ghostery
 * Vimperator
 * Quick Translator
-* µBlock (https://github.com/gorhill/uBlock)
+* µBlock Origin (https://github.com/gorhill/uBlock)
 
 About:config
 ------------
@@ -21,6 +21,8 @@ Some values to tweak on about:config.
 * browser.sessionstore.interval: 60000
 * image.animation_mode: none
 * network.prefetch-next: false
+* loop.enabled: false # disable hello
+* browser.newtabpage.{columns|rows} # for tweak about:newtab
 
 Spell checking
 --------------
