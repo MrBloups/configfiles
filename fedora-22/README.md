@@ -1,4 +1,4 @@
 Install locale packages
 
-  dnf install dnf-langpacks
-  dnf langinstall fr
+    dnf install dnf-langpacks
+    dnf langinstall fr
