@@ -19,9 +19,9 @@ About:config
 Some values to tweak on about:config.
 
 * browser.sessionstore.interval: 60000
-* image.animation_mode: none
-* network.prefetch-next: false
-* loop.enabled: false # disable hello
+* image.animation_mode: none        # disable gif animation
+* network.prefetch-next: false      # disable preload page
+* loop.enabled: false               # disable ħello
 * browser.newtabpage.{columns|rows} # for tweak about:newtab
 
 Spell checking
