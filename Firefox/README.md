@@ -22,6 +22,7 @@ Some values to tweak on about:config.
 * image.animation_mode: none        # disable gif animation
 * network.prefetch-next: false      # disable preload page
 * loop.enabled: false               # disable Hello
+* browser.pocket.enabled: false     # disable Pocket
 * browser.newtabpage.{columns|rows} # for tweak about:newtab
 
 Spell checking
