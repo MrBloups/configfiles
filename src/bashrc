@@ -53,10 +53,13 @@ function uptime_time()
 
 # enable git prompt
 source /usr/share/git-core/contrib/completion/git-prompt.sh
-GIT_PS1_SHOWDIRTYSTATE=1
+export GIT_PS1_SHOWDIRTYSTATE=true
+export GIT_PS1_SHOWUNTRACKEDFILES=true
 
 # tweak prompt
-export PS1='┌[$(uptime_time)]-[\e[34m\u@\h: \w$(__git_ps1)\e[0m]\n└ \$ '
+#2lines#export PS1='┌[$(uptime_time)]-[\e[34m\u@\h: \w$(__git_ps1)\e[0m]\n└ \$ '
+#user#export PS1='[\[\e[0;34m\]\u@\h \w\[\e[0;33m\]$(__git_ps1)\[\e[0m\]]\$ '
+#root#export PS1='[\[\e[0;31m\]\u@\h \w\[\e[0m\]]\$ '
 
 # urxvt: prompt in title window
 if [[ "$TERM" =~ ^rxvt ]]; then
