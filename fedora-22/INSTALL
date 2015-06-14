@@ -1,1 +1,22 @@
 sed -i '/^#WaylandEnable/a WaylandEnable=false' /etc/gdm/custom.conf
+
+dnf install gstreamer1-vaapi # acceleration GPU pour video
+
+# wifi
+dnf install network-manager-applet gnome-keyring
+
+{
+    if [ -n "$DESKTOP_SESSION" ]; then
+        eval `gnome-keyring-daemon --start --components=secret`
+        export SSH_AUTH_SOCK
+    fi
+} > .bash_profile
+
+
+# run nm-applet one time, then it's not necessary
+echo "exec --no-startup-id nm-applet" >> .i3/config
+
+nm-connection-editor
+Important in General tab, check connection auto and all user
+          in Security tab, check password for all user 
+          (under bottom arrow in passwor field)
