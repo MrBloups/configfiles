@@ -1,0 +1,16 @@
+#!/bin/sh
+
+SRC="./src"
+
+# normal user
+if [ `id -u` -ne 0 ]; then
+    # make directory
+    mkdir -p ${HOME}/.config/gtk-3.0
+    # append
+    cat ${SRC}/bashrc >> ${HOME}/.bashrc
+    # copy
+    cp ${SRC}/settings.ini ${HOME}/.config/gtk-3.0/
+    cp ${SRC}/vimrc ${HOME}/.vimrc
+    cp ${SRC}/gitconfig ${HOME}/.gitconfig
+    cp ${SRC}/Xresources ${HOME}/.Xresources
+fi
