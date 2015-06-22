@@ -3,12 +3,6 @@ configfiles
 
 Repository for configuration files and scripts
 
-Solarized
----------
-
-For create a gnome-terminal profile with Solarized color set, please follow this ripository  
-https://github.com/Anthony25/gnome-terminal-colors-solarized
-
 Laptop power management
 -----------------------
 
@@ -23,13 +17,12 @@ Disable gdm user list
 
     sudo -u gdm dbus-launch gsettings set org.gnome.login-screen disable-user-list true
 
-
 Xcalib
 ------
 
 Xcalib is a tool for calibrate your screen manually or from an icc profile. Install it.
 
-    sudo yum install xcalib
+    sudo dnf install xcalib
 
 Get the icc profile for your screen back.
 
@@ -39,11 +32,21 @@ And use
 
     xcalib -clear ; xcalib ICCPROFILE
 
-Manage your connexion wifi with nmcli
+Manage your wifi connexion with nmcli
 -------------------------------------
-First, make sure you are NetworkManager for Wifi
 
-    yum install NetworkManager-wifi
+Make sure you are NetworkManager for Wifi
+
+    dnf install NetworkManager-wifi network-manager-applet gnome-keyring
+
+In dot bash_profile add
+
+    if [ -n "$DESKTOP_SESSION" ]; then
+        eval `gnome-keyring-daemon --start --components=secret`
+        export SSH_AUTH_SOCK
+    fi
+
+Restart your session. Run nm-applet.
 
 Next, create and configure your connexion
 
@@ -53,3 +56,23 @@ Next, create and configure your connexion
     nmcli con modify MonWifi wifi-sec.psk YOUR_PASSWORD
     
     nmcli con up YOUR_CON_NAME
+
+TIPS nm-connection-editor:
+In 'General' tab, check connection auto and all user
+In 'Security' tab, check password for all user (under bottom arrow in passwor field)
+
+
+Complete localisation installation
+----------------------------------
+
+    dnf install dnf-langpacks
+    dnf langinstall fr
+
+Enable powertop service
+-----------------------
+
+    dnf install powertop
+    powertop --calibrate
+    systemctl enable powertop
+    systemctl start powertop
+
