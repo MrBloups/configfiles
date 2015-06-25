@@ -24,3 +24,4 @@ systemctl disable mdmonitor.service
 systemctl disable avahi-daemon.service
 systemctl disable multipathd.service
 systemctl disable dmraid-activation.service
+systemctl disable sshd.service

@@ -17,6 +17,11 @@ Disable gdm user list
 
     sudo -u gdm dbus-launch gsettings set org.gnome.login-screen disable-user-list true
 
+Disable Wayland
+---------------
+
+    sed -i '/^#WaylandEnable/a WaylandEnable=false' /etc/gdm/custom.conf
+
 Xcalib
 ------
 
