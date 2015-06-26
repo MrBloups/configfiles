@@ -1,7 +1,7 @@
 configfiles
 ===========
 
-Repository for configuration files and scripts
+Repository for configuration files and scripts on Fedora 22
 
 Laptop power management
 -----------------------
@@ -17,13 +17,13 @@ Disable gdm user list
 
     sudo -u gdm dbus-launch gsettings set org.gnome.login-screen disable-user-list true
 
-Disable Wayland
----------------
+Disable Wayland from gdm
+------------------------
 
     sed -i '/^#WaylandEnable/a WaylandEnable=false' /etc/gdm/custom.conf
 
-Xcalib
-------
+Use xcalib
+----------
 
 Xcalib is a tool for calibrate your screen manually or from an icc profile. Install it.
 
@@ -37,8 +37,8 @@ And use
 
     xcalib -clear ; xcalib ICCPROFILE
 
-Manage your wifi connexion with nmcli
--------------------------------------
+Manage wifi connexion with nmcli
+--------------------------------
 
 Make sure you are NetworkManager for Wifi
 
