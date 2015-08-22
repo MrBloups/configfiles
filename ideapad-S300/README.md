@@ -47,7 +47,7 @@ Selinux
 
 Fstab
 -----
-    [root]# sed -i '/ext4/ s/defaults/defaults,noatime,nodiratime/' /etc/fstab
+    [root]# sed -i '/ext4/ s/defaults/defaults,lazytime/' /etc/fstab
     [root]# sed -i '/ext4/ s/1 1$/0 1/' /etc/fstab
     [root]# sed -i '/ext4/ s/1 2$/0 2/' /etc/fstab
 
