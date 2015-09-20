@@ -1,7 +1,7 @@
 # GUI
-color listfocus         default default reverse
-color listnormal_unread blue    default
-color listfocus_unread  black   blue
+color listfocus         white   blue
+color listnormal_unread green   default
+color listfocus_unread  white   green
 color info              default default bold
 
 # Others options
@@ -10,6 +10,5 @@ cleanup-on-quit    yes
 datetime-format    "%d %b"
 download-full-page yes
 download-retries   10
-keep-articles-days 5
+keep-articles-days 10
 refresh-on-startup yes
-
