@@ -26,7 +26,8 @@ set expandtab
 
 " show hidden characters
 set backspace=eol,start,indent
-set listchars=nbsp:¤,trail:¤,tab:^^
+" set listchars=nbsp:¤,trail:¤,tab:^^
+set listchars=nbsp:·,trail:·,tab:\ \ 
 set list
 hi NonText ctermfg=darkgray
 hi SpecialKey ctermfg=darkgray
