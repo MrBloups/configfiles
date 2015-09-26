@@ -6,11 +6,7 @@ Some tweaks for optimise Firefox...
 Addons
 ------
 
-* NoScripts
-* HTTPS-Everywhere
 * Ghostery
-* Vimperator
-* Quick Translator
 * µBlock Origin (https://github.com/gorhill/uBlock)
 
 About:config
