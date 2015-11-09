@@ -29,6 +29,12 @@ Exemple for fedora:
 
     [root]# yum install hunspell-fr
 
+
+Don't close window with last tab
+--------------------------------
+
+In about:config change the value of  **browser.tabs.closeWindowWithLastTab** from true to **false**.
+
 Stop GIF Image Animation
 ------------------------
 
