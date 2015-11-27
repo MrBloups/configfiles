@@ -40,6 +40,13 @@ Stop GIF Image Animation
 
 Go to about:config and change the value of string **image.animation_mode** from **normal** to **none**.
 
+Disable media auto play
+-----------------------
+
+Go to about:config and change the value of string **media.autoplay.enabled** from **normal** to **false**.
+
+
+
 Useful links
 ------------
 
