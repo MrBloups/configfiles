@@ -33,7 +33,12 @@ Exemple for fedora:
 Don't close window with last tab
 --------------------------------
 
-In about:config change the value of  **browser.tabs.closeWindowWithLastTab** from true to **false**.
+In about:config change the value of **browser.tabs.closeWindowWithLastTab** from true to **false**.
+
+Always enabled tracking protection (Firefox 42 and later)
+---------------------------------------------------------
+
+In about:config change the value of **privacy.trackingprotection.enabled** from false to **true**.
 
 Stop GIF Image Animation
 ------------------------
