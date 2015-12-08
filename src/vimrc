@@ -21,8 +21,9 @@ hi StatusLine cterm=reverse
 
 " tabs
 set tabstop=4
-set shiftwidth=1
+set shiftwidth=4
 set expandtab
+set smarttab
 
 " show hidden characters
 set backspace=eol,start,indent
