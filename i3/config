@@ -2,10 +2,10 @@
 set $mod Mod4
 set $alt Mod1
 
-set $font pango:terminus 12
+set $font pango:Cantarell 10
 set $xfont -xos4-terminus-medium-r-*-*-14-*
 
-font $xfont
+font $font
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
@@ -41,7 +41,7 @@ bindsym $mod+v split h
 bindsym $mod+f fullscreen
 
 # change container layout (stacked, tabbed, toggle split)
-bindsym $mod+s layout stacking
+#bindsym $mod+s layout stacking
 bindsym $mod+z layout tabbed
 #bindsym $mod+e layout toggle split
 bindsym $mod+e layout default
@@ -134,62 +134,61 @@ mode $resize {
 bindsym $mod+r mode $resize
 
 
-# poweroff mode
-set $low "Le niveau de la batterie est faible. Branchez-vous sur le secteur."
-mode $low {
-    bindsym Escape mode "default"
-}
-
-
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 bar {
     position top
-    tray_output none
+    tray_output primary
     status_command i3status -c ~/.i3/i3status.conf
-    wheel_up_cmd nop
-    wheel_down_cmd nop
-    colors {
-        background #1d1f21
-        statusline #c5c8c6
+    bindsym button4 nop
+    bindsym button5 nop
+    separator_symbol " "
 
-        focused_workspace  #1d1f21 #81a2be #ffffff
-        active_workspace   #1d1f21 #1d1f21 #c5c8c6
-        inactive_workspace #1d1f21 #1d1f21 #969896
-        urgent_workspace   #1d1f21 #cc6666 #ffffff
+    colors {
+        background #E9E9E9
+        statusline #4D4D4C
+        focused_workspace  #E9E9E9 #81A2BE #FFFFFF
+        active_workspace   #E9E9E9 #E9E9E9 #4D4D4C
+        inactive_workspace #E9E9E9 #D6D6D6 #8E908C
+        urgent_workspace   #E9E9E9 #D54E53 #FFFFFF
+        binding_mode       #E9E9E9 #4D4D4C #E9E9E9
     }
 }
 
 # window decoration
-client.focused          #81a2be #81a2be #ffffff #81a2be
-client.focused_inactive #282a2e #282a2e #969896 #282a2e
-client.unfocused        #282a2e #282a2e #969896 #282a2e
-client.urgent           #cc6666 #cc6666 #ffffff #cc6666
+client.focused          #D6D6D6 #E9E9E9 #4D4D4C #E9E9E9
+client.focused_inactive #D6D6D6 #E9E9E9 #4D4D4C #E9E9E9
+client.unfocused        #D6D6D6 #D6D6D6 #8E908C #E9E9E9
+client.urgent           #C82829 #D54E53 #FFFFFF #E9E9E9
+client.placeholder      #000000 #8E908C #FFFFFF #000000
+client.background       #E9E9E9
 
 
 mouse_warping none
 focus_follows_mouse no
 
-new_window 1pixel
-new_float 1pixel
+new_window normal
+new_float normal
 hide_edge_borders both
 popup_during_fullscreen smart
 
-assign [class="URxvt"] 1
-assign [class="Firefox"] 2
-assign [class="Epiphany"] 2
-assign [class="Vimb"] 2
+force_display_urgency_hint 2000 ms
+for_window [class=".*"] title_format "<span font='Cantarell Bold 10'> %title</span>"
 
-for_window [class="Xmessage"] floating enable
-for_window [class="Xmessage"] border none
+assign [class="URxvt"]    1
+assign [class="Firefox"]  2
+assign [class="Epiphany"] 2
+
+for_window [class="URxvt"]    border pixel 1
+for_window [class="Firefox"]  border pixel 1
+for_window [class="Epiphany"] border pixel 1
 
 #bindsym $mod+m move scratchpad
 #bindsym $mod+o scratchpad show
 
-bindsym $alt+w exec epiphany
 bindsym $alt+e exec nautilus
 bindsym $alt+f exec firefox
-bindsym $alt+v exec ~/Gits/vimb/vimb
+bindsym $mod+w exec epiphany
 
 # volume control
 bindsym XF86AudioLowerVolume exec pactl set-sink-volume 0 '-10%'
@@ -203,18 +202,22 @@ bindsym XF86MonBrightnessDown exec xbacklight -dec 5
 bindsym $mod+x exec xset -dpms
 bindsym $mod+Shift+x exec xset +dpms
 
+# gnome
 #exec --no-startup-id /usr/bin/gnome-session
 #exec --no-startup-id /usr/libexec/gnome-settings-daemon
-# natural scrolling (libinput and synclient methods)
-#exec --no-startup-id xinput --set-prop 11 --type=int --format=8 "libinput Natural Scrolling Enabled" 1
-#exec --no-startup-id eval $(gnome-keyring-daemon --start)
-exec --no-startup-id synclient VertScrollDelta=-106 HorizScrollDelta=-106
-#exec --no-startup-id nm-applet
 
+#exec --no-startup-id eval $(gnome-keyring-daemon --start --components=pkcs11,secret,ssh)
+
+# natural scrolling (libinput and synclient methods)
+#exec --no-startup-id xinput --set-prop 12 --type=int --format=8 "libinput Natural Scrolling Enabled" 1
+exec --no-startup-id synclient VertScrollDelta=-106 HorizScrollDelta=-106 AreaBottomEdge=4000
+
+#exec --no-startup-id xcalib -clear ; xcalib ~/.i3/lenovo-ideapad-s300.icc
 exec --no-startup-id pactl set-sink-volume 0 '50%'
 exec --no-startup-id pactl set-sink-mute 0 1
-exec --no-startup-id xbacklight -set 5
+exec --no-startup-id xbacklight -set 15
 exec --no-startup-id xset dpms 60 0 0
 exec --no-startup-id xset -b
-exec --no-startup-id xsetroot -solid '#8abeb7'
+#exec --no-startup-id xsetroot -solid '#969896'
+exec --no-startup-id feh --bg-fill /home/rhel-day.jpg
 exec --no-startup-id urxvtd -q -f -o
