@@ -147,21 +147,29 @@ bar {
     colors {
         background #E9E9E9
         statusline #4D4D4C
-        focused_workspace  #E9E9E9 #81A2BE #FFFFFF
-        active_workspace   #E9E9E9 #E9E9E9 #4D4D4C
-        inactive_workspace #E9E9E9 #D6D6D6 #8E908C
-        urgent_workspace   #E9E9E9 #D54E53 #FFFFFF
-        binding_mode       #E9E9E9 #4D4D4C #E9E9E9
+        
+        focused_workspace  #E9E9E9 #4A90D9 #E9E9E9
+        active_workspace   #E9E9E9 #A5A5A5 #E9E9E9
+        inactive_workspace #E9E9E9 #E9E9E9 #4D4D4C
+        urgent_workspace   #E9E9E9 #D54E53 #E9E9E9
+        binding_mode       #E9E9E9 #F3FFEE #4D9A26
     }
 }
 
 # window decoration
-client.focused          #D6D6D6 #E9E9E9 #4D4D4C #E9E9E9
-client.focused_inactive #D6D6D6 #E9E9E9 #4D4D4C #E9E9E9
-client.unfocused        #D6D6D6 #D6D6D6 #8E908C #E9E9E9
-client.urgent           #C82829 #D54E53 #FFFFFF #E9E9E9
+client.focused          #A5A5A5 #E9E9E9 #4D4D4C #000000
+client.focused_inactive #A5A5A5 #A5A5A5 #E9E9E9 #000000
+client.unfocused        #A5A5A5 #A5A5A5 #E9E9E9 #000000
+client.urgent           #C82829 #D54E53 #FFFFFF #000000
 client.placeholder      #000000 #8E908C #FFFFFF #000000
 client.background       #E9E9E9
+# or
+#client.focused          #D6D6D6 #E9E9E9 #4D4D4C #E9E9E9
+#client.focused_inactive #D6D6D6 #E9E9E9 #4D4D4C #E9E9E9
+#client.unfocused        #D6D6D6 #D6D6D6 #8E908C #E9E9E9
+#client.urgent           #C82829 #D54E53 #FFFFFF #E9E9E9
+#client.placeholder      #000000 #8E908C #FFFFFF #000000
+#client.background       #E9E9E9
 
 
 mouse_warping none
