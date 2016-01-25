@@ -1,8 +1,13 @@
 
 # enable git prompt
 source /usr/share/git-core/contrib/completion/git-prompt.sh
+export GIT_PS1_DESCRIBE_STYLE=branch
+export GIT_PS1_SHOWCOLORHINTS=true
 export GIT_PS1_SHOWDIRTYSTATE=true
+export GIT_PS1_SHOWSTASHSTATE=true
 export GIT_PS1_SHOWUNTRACKEDFILES=true
+export GIT_PS1_SHOWUPSTREAM=verbose
+export PROMPT_COMMAND='__git_ps1 "[\[\e[0;34m\]\u@\h \w\[\e[0m\]]\$" "\\\$ "
 
 # tweak prompt
 #2lines#export PS1='┌[$(uptime_time)]-[\e[34m\u@\h: \w$(__git_ps1)\e[0m]\n└ \$ '
