@@ -18,7 +18,9 @@ export PROMPT_COMMAND='__git_ps1 "[\[\e[0;34m\]\u@\h \w\[\e[0m\]]" "\\\$ "
 # urxvt: prompt in title window
 if [[ "$TERM" =~ ^rxvt ]]; then
     #PROMPT_COMMAND='echo -ne "\e]0;$USER@$HOSTNAME:$PWD\007"'
-    trap 'echo -ne "\033]0;$USER@$HOSTNAME:$PWD\007"' DEBUG
+    PROMPT_COMMAND+=';'
+    PROMPT_COMMAND+='echo -ne "\e]0;$USER@$HOSTNAME:$PWD\007"'
+    # OR # trap 'echo -ne "\033]0;$USER@$HOSTNAME:$PWD\007"' DEBUG
 fi
 
 # vim
