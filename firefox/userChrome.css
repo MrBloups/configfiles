@@ -1,0 +1,12 @@
+/*
+ * personal tweak
+ * create $HOME/.mozilla/firefox/YOUR_CURRENT_PROFIL.default/chrome
+ * copy this file within
+ */
+
+
+/* change UI font */
+* { font: 12px DejaVu Sans !important; }
+
+/* hide folder icon in personal bookmark */
+#personal-bookmarks toolbarbutton[type=menu] .toolbarbutton-icon { display:none !important; }
