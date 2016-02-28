@@ -160,16 +160,17 @@ hide_edge_borders both
 popup_during_fullscreen smart
 
 force_display_urgency_hint 2000 ms
+
 #for_window [class=".*"] title_format "<span font='Cantarell Bold 10'> %title</span>"
-for_window [class=".*"] title_format "<span font='DejaVu Sans 10'>   %title</span>"
+for_window [class=".*"]      title_format "   %title"
+for_window [class="URxvt"]   title_format "   %title"
+for_window [class="Firefox"] title_format "   %title"
 
-assign [class="URxvt"]    1
-for_window [class="URxvt"]    border normal 1
-for_window [class="URxvt"] title_format "<span font='DejaVu Sans 10'>   %title</span>"
+assign [class="URxvt"]   1
+assign [class="Firefox"] 2
 
-assign [class="Firefox"]  2
-for_window [class="Firefox" window_type="normal"]  border pixel 1
-for_window [class="Firefox"] title_format "<span font='DejaVu Sans 10'>   %title</span>"
+for_window [class="URxvt"] border normal 1
+for_window [class="Firefox" window_type="normal"] border pixel 1
 
 bindsym $mod+m move scratchpad
 bindsym $mod+o scratchpad show
