@@ -2,7 +2,9 @@
 set $mod Mod4
 set $alt Mod1
 
-set $font pango:Cantarell 10
+#set $font pango:terminus 12
+#set $font pango:Cantarell 10
+set $font pango:DejaVu Sans, FontAwesome 10
 set $xfont -xos4-terminus-medium-r-*-*-14-*
 
 font $font
@@ -89,7 +91,7 @@ bindsym $mod+Shift+r restart
 
 
 # logout mode
-set $logout "Quitter la session ? [Entrée] Quitter - [Échap] Annuler"
+set $logout "  Quitter la session ? [Entrée] Quitter - [Échap] Annuler"
 mode $logout {
     bindsym Return exec i3-msg exit
     bindsym Escape mode "default"
@@ -98,7 +100,7 @@ bindsym $mod+Shift+e mode $logout
 
 
 # poweroff mode
-set $poweroff "Éteindre l'ordinateur ? [Entrée] Éteindre - [r] Redémarrer - [Échap] Annuler"
+set $poweroff "  Éteindre l'ordinateur ? [Entrée] Éteindre - [r] Redémarrer - [Échap] Annuler"
 mode $poweroff {
     bindsym r exec systemctl reboot
     bindsym Return exec systemctl poweroff
@@ -108,28 +110,13 @@ bindsym $mod+Shift+z mode $poweroff
 
 
 # resize window (you can also use the mouse for that)
-set $resize "Redimensionner"
+set $resize "  Redimensionner la fenêtre courante. [Flèche] Redimensionner - [Échap] Annuler"
 mode $resize {
-        # These bindings trigger as soon as you enter the resize mode
-
-        # Pressing left will shrink the window’s width.
-        # Pressing right will grow the window’s width.
-        # Pressing up will shrink the window’s height.
-        # Pressing down will grow the window’s height.
-        bindsym j resize shrink width 10 px or 10 ppt
-        bindsym k resize grow height 10 px or 10 ppt
-        bindsym l resize shrink height 10 px or 10 ppt
-        bindsym m resize grow width 10 px or 10 ppt
-
-        # same bindings, but for the arrow keys
-        bindsym Left resize shrink width 10 px or 10 ppt
-        bindsym Down resize grow height 10 px or 10 ppt
-        bindsym Up resize shrink height 10 px or 10 ppt
-        bindsym Right resize grow width 10 px or 10 ppt
-
-        # back to normal: Enter or Escape
-        bindsym Return mode "default"
-        bindsym Escape mode "default"
+    bindsym Left resize shrink width 10 px or 10 ppt
+    bindsym Down resize grow height 10 px or 10 ppt
+    bindsym Up resize shrink height 10 px or 10 ppt
+    bindsym Right resize grow width 10 px or 10 ppt
+    bindsym Escape mode "default"
 }
 bindsym $mod+r mode $resize
 
@@ -139,7 +126,7 @@ bindsym $mod+r mode $resize
 bar {
     position top
     tray_output primary
-    status_command i3status -c ~/.i3/i3status.conf
+    status_command i3status -c ~/.i3/status.conf
     bindsym button4 nop
     bindsym button5 nop
     separator_symbol " "
@@ -156,19 +143,12 @@ bar {
 }
 
 # window decoration
-client.focused          #A5A5A5 #E9E9E9 #4D4D4C #000000
-client.focused_inactive #A5A5A5 #A5A5A5 #E9E9E9 #000000
-client.unfocused        #A5A5A5 #A5A5A5 #E9E9E9 #000000
-client.urgent           #C82829 #D54E53 #FFFFFF #000000
+client.focused          #D6D6D6 #E9E9E9 #4A90D9 #E9E9E9
+client.focused_inactive #D6D6D6 #E9E9E9 #8E908C #E9E9E9
+client.unfocused        #D6D6D6 #E9E9E9 #8E908C #E9E9E9
+client.urgent           #C82829 #D54E53 #FFFFFF #E9E9E9
 client.placeholder      #000000 #8E908C #FFFFFF #000000
 client.background       #E9E9E9
-# or
-#client.focused          #D6D6D6 #E9E9E9 #4D4D4C #E9E9E9
-#client.focused_inactive #D6D6D6 #E9E9E9 #4D4D4C #E9E9E9
-#client.unfocused        #D6D6D6 #D6D6D6 #8E908C #E9E9E9
-#client.urgent           #C82829 #D54E53 #FFFFFF #E9E9E9
-#client.placeholder      #000000 #8E908C #FFFFFF #000000
-#client.background       #E9E9E9
 
 
 mouse_warping none
@@ -180,22 +160,21 @@ hide_edge_borders both
 popup_during_fullscreen smart
 
 force_display_urgency_hint 2000 ms
-for_window [class=".*"] title_format "<span font='Cantarell Bold 10'> %title</span>"
+#for_window [class=".*"] title_format "<span font='Cantarell Bold 10'> %title</span>"
+for_window [class=".*"] title_format "<span font='DejaVu Sans 10'>   %title</span>"
 
 assign [class="URxvt"]    1
+for_window [class="URxvt"]    border normal 1
+for_window [class="URxvt"] title_format "<span font='DejaVu Sans 10'>   %title</span>"
+
 assign [class="Firefox"]  2
-assign [class="Epiphany"] 2
+for_window [class="Firefox" window_type="normal"]  border pixel 1
+for_window [class="Firefox"] title_format "<span font='DejaVu Sans 10'>   %title</span>"
 
-for_window [class="URxvt"]    border pixel 1
-for_window [class="Firefox"]  border pixel 1
-for_window [class="Epiphany"] border pixel 1
+bindsym $mod+m move scratchpad
+bindsym $mod+o scratchpad show
 
-#bindsym $mod+m move scratchpad
-#bindsym $mod+o scratchpad show
-
-bindsym $alt+e exec nautilus
 bindsym $alt+f exec firefox
-bindsym $mod+w exec epiphany
 
 # volume control
 bindsym XF86AudioLowerVolume exec pactl set-sink-volume 0 '-10%'
@@ -205,6 +184,7 @@ bindsym XF86AudioMute exec pactl set-sink-mute 0 toggle
 # brightness control
 bindsym XF86MonBrightnessUp exec xbacklight -inc 5
 bindsym XF86MonBrightnessDown exec xbacklight -dec 5
+
 # turn on/off dpms
 bindsym $mod+x exec xset -dpms
 bindsym $mod+Shift+x exec xset +dpms
@@ -212,19 +192,18 @@ bindsym $mod+Shift+x exec xset +dpms
 # gnome
 #exec --no-startup-id /usr/bin/gnome-session
 #exec --no-startup-id /usr/libexec/gnome-settings-daemon
-
 #exec --no-startup-id eval $(gnome-keyring-daemon --start --components=pkcs11,secret,ssh)
 
 # natural scrolling (libinput and synclient methods)
 #exec --no-startup-id xinput --set-prop 12 --type=int --format=8 "libinput Natural Scrolling Enabled" 1
-exec --no-startup-id synclient VertScrollDelta=-106 HorizScrollDelta=-106 AreaBottomEdge=4000
+exec --no-startup-id synclient VertScrollDelta=-106 HorizScrollDelta=-106
 
-#exec --no-startup-id xcalib -clear ; xcalib ~/.i3/lenovo-ideapad-s300.icc
 exec --no-startup-id pactl set-sink-volume 0 '50%'
 exec --no-startup-id pactl set-sink-mute 0 1
 exec --no-startup-id xbacklight -set 15
 exec --no-startup-id xset dpms 60 0 0
 exec --no-startup-id xset -b
-#exec --no-startup-id xsetroot -solid '#969896'
+exec --no-startup-id xcompmgr -n
 exec --no-startup-id feh --bg-fill /home/rhel-day.jpg
 exec --no-startup-id urxvtd -q -f -o
+
