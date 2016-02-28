@@ -19,7 +19,8 @@ bindsym $mod+Return exec urxvtc
 bindsym $mod+Shift+a kill
 
 # start dmenu (a program launcher)
-bindsym $mod+d exec --no-startup-id i3-dmenu-desktop --entry-type=command --dmenu="dmenu -b -i -p Exécuter -fn $xfont"
+#bindsym $mod+d exec --no-startup-id i3-dmenu-desktop --entry-type=command --dmenu="dmenu -b -i -p Exécuter -fn $xfont"
+bindsym $mod+d exec --no-startup-id i3-dmenu-desktop --entry-type=command --dmenu="dmenu -l 3 -sb '#4A90D9' -b -i -p Éxécuter -fn $xfont"
 
 # change focus
 bindsym $mod+Left focus left
