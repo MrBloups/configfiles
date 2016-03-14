@@ -20,3 +20,9 @@ For disable blink cursor, run in a terminal:
 
     gsettings set org.gnome.desktop.interface cursor-blink false
 
+Inserting a Unicode character in VIM
+------------------------------------
+
+In INSERT MODE type:
+
+    Ctrl + v, u, unicode code
