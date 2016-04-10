@@ -212,7 +212,7 @@ exec --no-startup-id pactl set-sink-mute 0 1
 exec --no-startup-id xbacklight -set 15
 #exec --no-startup-id xset dpms 60 0 0
 #exec --no-startup-id xset -b
-exec --no-startup-id xcompmgr -n
+#exec --no-startup-id xcompmgr -n
 exec --no-startup-id feh --bg-fill /home/rhel-day.jpg
 exec --no-startup-id urxvtd -q -f -o
 
