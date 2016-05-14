@@ -13,14 +13,16 @@ font $font
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec urxvtc
+#bindsym $mod+Return exec urxvtc
+bindsym $mod+Return exec urxvt256cc
 
 # kill focused window
 bindsym $mod+Shift+a kill
 
 # start dmenu (a program launcher)
 #bindsym $mod+d exec --no-startup-id i3-dmenu-desktop --entry-type=command --dmenu="dmenu -b -i -p Exécuter -fn $xfont"
-bindsym $mod+d exec --no-startup-id i3-dmenu-desktop --entry-type=command --dmenu="dmenu -l 3 -sb '#4A90D9' -b -i -p Éxécuter -fn $xfont"
+#bindsym $mod+d exec --no-startup-id i3-dmenu-desktop --entry-type=command --dmenu="dmenu -l 3 -sb '#4A90D9' -b -i -p Éxécuter -fn $xfont"
+bindsym $mod+d exec --no-startup-id i3-dmenu-desktop --entry-type=command --dmenu="dmenu -l 3 -sb '#4A90D9' -b -i -p Éxécuter"
 
 # change focus
 bindsym $mod+Left focus left
@@ -213,6 +215,8 @@ exec --no-startup-id xbacklight -set 15
 #exec --no-startup-id xset dpms 60 0 0
 #exec --no-startup-id xset -b
 #exec --no-startup-id xcompmgr -n
-exec --no-startup-id feh --bg-fill /home/rhel-day.jpg
-exec --no-startup-id urxvtd -q -f -o
+#exec --no-startup-id feh --bg-fill /home/rhel-day.jpg
+exec --no-startup-id feh --bg-fill /usr/share/backgrounds/default.png
+#exec --no-startup-id urxvtd -q -f -o
+exec --no-startup-id urxvt256cd -q -f -o
 
