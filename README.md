@@ -20,6 +20,21 @@ Disable gdm user list
 Complete localisation installation
 ----------------------------------
 
-    dnf install dnf-langpacks
-    dnf langinstall fr
+    # dnf install dnf-langpacks
+    # dnf langinstall fr
 
+System upgrading
+----------------
+
+    # dnf upgrade
+    # dnf install dnf-plugin-system-upgrade
+    # dnf system-upgrade download --releaserver=24 --allowerasing
+
+Use '--allowerasing' if you have additional repo (rpmfusion for example).
+
+    # dnf system-upgrade reboot
+
+And let you PC restart. It boot on your last kernel...
+
+See
+* https://fedoraproject.org/wiki/DNF_system_upgrade
