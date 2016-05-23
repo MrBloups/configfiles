@@ -1,11 +1,25 @@
 # -*- coding: utf-8 -*-
 
 """
-Display the current window title.
+Another module than display the current window title.
+Use i3 title_format for display window title.
+
+Limits:
+    Don't support pango markup directives
 
 Requires:
     - i3-py (https://github.com/ziberna/i3-py)
-    # pip install i3-py
+    # pip install [--user] i3-py
+
+Configuration parameters:
+    - cache_timeout : How often we refresh this module in seconds.
+                      Default 0.5
+    - color         : Color of printed text.
+                      Default None
+    - max_width     : Maximum width of block (in symbols).
+                      If the title is longer than `max_width`,
+                      it will be truncated.
+                      Default: 120.
 
 @author MrBloups
 @license GPL
@@ -22,14 +36,14 @@ class Py3status:
     ## config parameters
     #
     cache_timeout = 0.5
-    max_length = 100
+    max_width = 120
     color = None
 
     def __init__(self):
         self.title = ''
         self.title_format = ''
 
-    def simple_window_title(self, i3s_output_list, i3s_config):
+    def another_window_title(self, i3s_output_list, i3s_config):
         try:
             focused = i3.filter(focused=True)
 
@@ -42,8 +56,8 @@ class Py3status:
                     format = window['title_format']
                     self.title_format = format.replace('%title', '{title}')
 
-                    if len(self.title) > self.max_length:
-                        self.title =  "..." + self.title[-(self.max_length):]
+                    if len(self.title) > self.max_width:
+                        self.title =  "..." + self.title[-(self.max_width):]
         except:
             self.title = ''
             self.title_format = ''
@@ -62,8 +76,8 @@ if __name__ == "__main__":
 
     from time import sleep
 
-    x = Py3status()
+    i3s = Py3status()
 
     while True:
-        print(x.simple_window_title([], {}))
-        sleep(1)
+        print(i3s.another_window_title([], {}))
+        sleep(2)
