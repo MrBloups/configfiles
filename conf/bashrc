@@ -1,0 +1,39 @@
+# .bashrc
+
+# Source global definitions
+if [ -f /etc/bashrc ]; then
+    . /etc/bashrc
+fi
+
+# Uncomment the following line if you don't like systemctl's auto-paging feature:
+# export SYSTEMD_PAGER=
+
+# User specific aliases and functions
+
+# enable git prompt
+source /usr/share/git-core/contrib/completion/git-prompt.sh
+export GIT_PS1_DESCRIBE_STYLE=branch
+#export GIT_PS1_HIDE_IF_PWD_IGNORED=true
+export GIT_PS1_SHOWCOLORHINTS=true
+export GIT_PS1_SHOWDIRTYSTATE=true
+export GIT_PS1_SHOWSTASHSTATE=true
+export GIT_PS1_SHOWUNTRACKEDFILES=true
+export GIT_PS1_SHOWUPSTREAM=verbose
+export PROMPT_COMMAND='__git_ps1 "[\[\e[1m\]\u@\h \w\[\e[0m\]]" "\\\$ "'
+
+# urxvt: prompt in title window
+if [[ "$TERM" =~ ^rxvt ]]; then
+    PROMPT_COMMAND+=';'
+    PROMPT_COMMAND+='echo -ne "\e]0;$USER@$HOSTNAME:$PWD\007"'
+    eval `dircolors $HOME/.i3/dircolors.ansi-light`
+fi
+
+# vim
+export EDITOR=vim
+export VISUAL=$EDITOR
+
+alias update='su -c "dnf update"'
+alias check-updates="dnf check-update"
+alias check-updates-testing="dnf check-update --disablerepo=updates --enablerepo=updates-testing"
+alias up='nmcli connection up $1'
+alias down='nmcli connection down $1'

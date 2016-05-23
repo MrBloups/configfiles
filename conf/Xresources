@@ -1,0 +1,35 @@
+!! path  ~/.Xresources
+!! usage xrdb ~/.Xressouces
+
+!! Grayscale xft setting -------------------------------------------------------
+
+Xft.antialias: 1
+Xft.dpi:       96
+Xft.hinting:   1
+Xft.hintstyle: hintslight
+Xft.rgba:      none
+Xft.lcdfilter: lcddefault
+Xft.autohint:  0
+
+!! Urxvt setting ---------------------------------------------------------------
+
+URxvt.skipBuiltinGlyphs: true
+URxvt.cursorBlink:       false
+URxvt.buffered:          true
+URxvt.iso14755:          false
+URxvt.iso14755_52:       false
+
+URxvt.imLocale:         fr_FR.utf8
+URxvt.font:             xft:terminus:pixelsize=14:antialias=false
+URxvt.fontBold:         xft:terminus:pixelsize=14:antialias=false:style=bold
+URxvt.scrollBar:        false
+URxvt.secondaryScreen:  1
+URxvt.secondaryScroll:  0
+URxvt.saveLines:        65535
+! important for solarized color scheme
+URxvt.intensityStyles:  false
+! disable perl
+URxvt.perl-ext:
+URxvt.perl-ext-common:
+
+#include ".i3/termcolor-solarized"
