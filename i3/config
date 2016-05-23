@@ -129,18 +129,21 @@ bindsym $mod+r mode $resize
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 bar {
+    font $font
     position top
     tray_output primary
-    status_command i3status -c ~/.i3/status.conf
+    #status_command i3status -c ~/.i3/status.conf
+    status_command py3status -c ~/.i3/py3status.conf
     bindsym button4 nop
     bindsym button5 nop
-    separator_symbol " "
+    separator_symbol " ❭ "
 
     colors {
         background #E9E9E9
         statusline #4D4D4C
-        #focused_workspace  #E9E9E9 #4A90D9 #E9E9E9
-        focused_workspace  #D6D6D6 #BFD7EA #4D4D4C
+        separator  #D6D6D6
+        #focused_workspace  #D6D6D6 #BFD7EA #4D4D4C
+        focused_workspace  #E9E9E9 #3C6EB4 #E9E9E9
         active_workspace   #E9E9E9 #A5A5A5 #E9E9E9
         inactive_workspace #E9E9E9 #E9E9E9 #4D4D4C
         urgent_workspace   #E9E9E9 #D54E53 #E9E9E9
@@ -149,8 +152,8 @@ bar {
 }
 
 # window decoration
-#client.focused          #D6D6D6 #E9E9E9 #4A90D9 #E9E9E9 #D6D6D6
-client.focused          #BFD7EA #BFD7EA #4D4D4C #E9E9E9 #D6D6D6
+#client.focused          #BFD7EA #BFD7EA #4D4D4C #E9E9E9 #D6D6D6
+client.focused          #3C6EB4 #3C6EB4 #E9E9E9 #E9E9E9 #D6D6D6
 client.focused_inactive #D6D6D6 #E9E9E9 #8E908C #E9E9E9 #E9E9E9
 client.unfocused        #D6D6D6 #E9E9E9 #8E908C #E9E9E9 #E9E9E9
 client.urgent           #C82829 #D54E53 #FFFFFF #E9E9E9 #E9E9E9
@@ -161,7 +164,7 @@ client.background       #E9E9E9
 mouse_warping none
 focus_follows_mouse no
 
-new_window normal 1
+new_window pixel 1
 new_float normal 1
 hide_edge_borders both
 popup_during_fullscreen smart
@@ -176,8 +179,8 @@ for_window [class="Firefox"] title_format "   %title"
 assign [class="URxvt"]   1
 assign [class="Firefox"] 2
 
-for_window [class="URxvt"] border normal 1
-for_window [class="Firefox" window_type="normal" window_role="browser"] border pixel 1
+#for_window [class="URxvt"] border normal 1
+#for_window [class="Firefox" window_type="normal" window_role="browser"] border pixel 1
 
 bindsym $mod+m move scratchpad
 bindsym $mod+o scratchpad show
@@ -214,7 +217,7 @@ exec --no-startup-id pactl set-sink-mute 0 1
 exec --no-startup-id xbacklight -set 15
 #exec --no-startup-id xset dpms 60 0 0
 #exec --no-startup-id xset -b
-#exec --no-startup-id xcompmgr -n
+exec --no-startup-id xcompmgr -n 2>/dev/null
 #exec --no-startup-id feh --bg-fill /home/rhel-day.jpg
 exec --no-startup-id feh --bg-fill /usr/share/backgrounds/default.png
 #exec --no-startup-id urxvtd -q -f -o
