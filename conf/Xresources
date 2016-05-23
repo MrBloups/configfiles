@@ -32,4 +32,5 @@ URxvt.intensityStyles:  false
 URxvt.perl-ext:
 URxvt.perl-ext-common:
 
-#include ".i3/termcolor-solarized"
+!#include "../i3/termcolor-solarized"
+#include "/home/jerome/.i3/termcolor-solarized"
