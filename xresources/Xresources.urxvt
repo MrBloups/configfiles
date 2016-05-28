@@ -1,15 +1,5 @@
-!! path  ~/.Xresources
-!! usage xrdb ~/.Xressouces
+! vim: set ft=xdefaults:
 
-!! Grayscale xft setting -------------------------------------------------------
-
-Xft.antialias: 1
-Xft.dpi:       96
-Xft.hinting:   1
-Xft.hintstyle: hintslight
-Xft.rgba:      none
-Xft.lcdfilter: lcddefault
-Xft.autohint:  0
 
 !! Urxvt setting ---------------------------------------------------------------
 
@@ -31,5 +21,3 @@ URxvt.intensityStyles:  false
 ! disable perl
 URxvt.perl-ext:
 URxvt.perl-ext-common:
-
-#include ".i3/termcolor-solarized"
