@@ -2,10 +2,8 @@
 set $mod Mod4
 set $alt Mod1
 
-#set $font pango:terminus 12
-#set $font pango:Cantarell 10
-set $font pango:DejaVu Sans, FontAwesome 10
-set $xfont -xos4-terminus-medium-r-*-*-14-*
+set $font pango:Cantarell 10, FontAwesome 10
+set $xfont Cantarell:size=10
 
 font $font
 
@@ -13,16 +11,14 @@ font $font
 floating_modifier $mod
 
 # start a terminal
-#bindsym $mod+Return exec urxvtc
 bindsym $mod+Return exec urxvt256cc
 
 # kill focused window
 bindsym $mod+Shift+a kill
 
-# start dmenu (a program launcher)
-#bindsym $mod+d exec --no-startup-id i3-dmenu-desktop --entry-type=command --dmenu="dmenu -b -i -p Exécuter -fn $xfont"
-#bindsym $mod+d exec --no-startup-id i3-dmenu-desktop --entry-type=command --dmenu="dmenu -l 3 -sb '#4A90D9' -b -i -p Éxécuter -fn $xfont"
-bindsym $mod+d exec --no-startup-id i3-dmenu-desktop --entry-type=command --dmenu="dmenu -l 3 -sb '#4A90D9' -b -i -p Éxécuter"
+# start dmenu (see manpages i3-dmenu-desktop)
+bindsym $mod+d exec --no-startup-id i3-dmenu-desktop --entry-type=name \
+                                                     --dmenu="dmenu -i -p '' -fn '$xfont' -nb '#E9E9E9' -nf '#3C6EB4' -sb '#3C6EB4' -sf '#E9E9E9'"
 
 # change focus
 bindsym $mod+Left focus left

@@ -14,12 +14,13 @@ Requires:
 Configuration parameters:
     - cache_timeout : How often we refresh this module in seconds.
                       Default 0.5
+    - prefix        : an optional string for print something before title
     - color         : Color of printed text.
                       Default None
     - max_width     : Maximum width of block (in symbols).
                       If the title is longer than `max_width`,
                       it will be truncated.
-                      Default: 120.
+                      Default: 100.
 
 @author MrBloups
 @license GPL
@@ -36,12 +37,13 @@ class Py3status:
     ## config parameters
     #
     cache_timeout = 0.5
-    max_width = 120
+    max_width = 100
+    prefix = None
     color = None
 
     def __init__(self):
-        self.title = ''
-        self.title_format = ''
+        self.title = u''
+        self.full_text = u''
 
     def another_window_title(self, i3s_output_list, i3s_config):
         try:
@@ -51,20 +53,27 @@ class Py3status:
                 window = focused[0]
 
                 if window['name'] != self.title:
+                    # title
                     self.title = window['name']
-                    # title format
-                    format = window['title_format']
-                    self.title_format = format.replace('%title', '{title}')
-
                     if len(self.title) > self.max_width:
                         self.title =  "..." + self.title[-(self.max_width):]
-        except:
+
+                    # title format
+                    title_format = window['title_format']
+                    title_format = title_format.replace('%title', '{title}')
+
+                    # full_text
+                    if self.prefix:
+                        self.full_text = u"{} {}".format(self.prefix.decode('utf-8'), title_format.format(title=self.title))
+                    else:
+                        self.full_text = title_format.format(title=self.title)
+        except :
             self.title = ''
-            self.title_format = ''
+            self.full_text = ''
         finally:
             response = {
                 'cached_until': time() + self.cache_timeout,
-                'full_text': self.title_format.format(title=self.title),
+                'full_text': self.full_text,
                 'color': self.color
             }
             return response
