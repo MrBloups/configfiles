@@ -1,5 +1,8 @@
+# path $HOME/.gitconfig
+
 [user]
     name = MrBloups
+    email = your.name@email.com
 [core]
     editor = vim
     excludesfile = ~/.gitignore
