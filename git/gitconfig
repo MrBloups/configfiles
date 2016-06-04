@@ -1,0 +1,12 @@
+[user]
+    name = MrBloups
+[core]
+    editor = vim
+    excludesfile = ~/.gitignore
+[color]
+    ui = true
+[alias]
+    # pretty log
+    lol = log --graph --decorate --pretty=oneline --abbrev-commit
+[push]
+    default = simple
