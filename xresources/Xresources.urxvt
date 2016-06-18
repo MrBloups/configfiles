@@ -1,7 +1,6 @@
 ! vim: set ft=xdefaults:
 
-
-!! Urxvt setting ---------------------------------------------------------------
+! urxvt setting
 
 URxvt.skipBuiltinGlyphs: true
 URxvt.cursorBlink:       false
@@ -16,8 +15,10 @@ URxvt.scrollBar:        false
 URxvt.secondaryScreen:  1
 URxvt.secondaryScroll:  0
 URxvt.saveLines:        65535
+
 ! important for solarized color scheme
 URxvt.intensityStyles:  false
+
 ! disable perl
 URxvt.perl-ext:
 URxvt.perl-ext-common:
