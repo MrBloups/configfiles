@@ -17,7 +17,7 @@ bindsym $mod+Return exec urxvt256cc
 bindsym $mod+Shift+a kill
 
 # start dmenu (see manpages i3-dmenu-desktop)
-bindsym $mod+d exec --no-startup-id i3-dmenu-desktop --entry-type=name \
+bindsym $mod+d exec --no-startup-id i3-dmenu-desktop --entry-type=command \
                                                      --dmenu="dmenu -i -p '' -fn '$xfont' -nb '#E9E9E9' -nf '#3C6EB4' -sb '#3C6EB4' -sf '#E9E9E9'"
 
 # change focus
@@ -195,8 +195,8 @@ bindsym XF86AudioMute exec pactl set-sink-mute 0 toggle
 bindsym XF86MonBrightnessUp exec xbacklight -inc 5
 bindsym XF86MonBrightnessDown exec xbacklight -dec 5
 
-# turn on/off dpms
-#bindsym $mod+x exec xset -dpms
+# turn on/off redshift
+bindsym $mod+x exec pkill -USR1 redshift
 #bindsym $mod+Shift+x exec xset +dpms
 
 # gnome
@@ -206,7 +206,7 @@ bindsym XF86MonBrightnessDown exec xbacklight -dec 5
 
 # natural scrolling (libinput and synclient methods)
 #exec --no-startup-id xinput --set-prop 12 --type=int --format=8 "libinput Natural Scrolling Enabled" 1
-exec --no-startup-id synclient VertScrollDelta=-106 HorizScrollDelta=-106
+exec --no-startup-id synclient VertScrollDelta=-106 HorizScrollDelta=-106 VertTwoFingerScroll=1
 
 exec --no-startup-id pactl set-sink-volume 0 '50%'
 exec --no-startup-id pactl set-sink-mute 0 1
@@ -218,4 +218,5 @@ exec --no-startup-id xbacklight -set 15
 exec --no-startup-id feh --bg-fill /usr/share/backgrounds/default.png
 #exec --no-startup-id urxvtd -q -f -o
 exec --no-startup-id urxvt256cd -q -f -o
+exec --no-startup-id redshift
 
