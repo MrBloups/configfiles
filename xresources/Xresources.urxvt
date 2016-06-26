@@ -12,8 +12,8 @@ URxvt.imLocale:         fr_FR.utf8
 URxvt.font:             xft:terminus:pixelsize=14:antialias=false
 URxvt.fontBold:         xft:terminus:pixelsize=14:antialias=false:style=bold
 URxvt.scrollBar:        false
-URxvt.secondaryScreen:  1
-URxvt.secondaryScroll:  0
+URxvt.secondaryScreen:  true
+URxvt.secondaryScroll:  false
 URxvt.saveLines:        65535
 
 ! important for solarized color scheme
