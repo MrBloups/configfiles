@@ -7,6 +7,8 @@ Install repo and codecs from rpmfusion
     dnf install http://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm
     dnf install http://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
 
+    # install ffmpeg
+    dnf install ffmpeg-libs
     # install codecs
     dnf install gstreamer1-{libav,vaapi} gstreamer1-plugins-{good,good-extras,ugly}
     # optional codecs

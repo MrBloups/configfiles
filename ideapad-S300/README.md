@@ -1,11 +1,12 @@
-FEDORA 23
-=========
+SYSTEM CONFIGURATION
+====================
 
 RPM
 ---
-    [root]# yum install gnome-tweak-tool faience-icon-theme terminus-fonts
+    [root]# yum install gnome-tweak-tool
+    [root]# yum install breeze-icon-theme terminus-fonts awesome-fonts
     [root]# yum install vim-enhanced man-pages-fr git
-    [root]# yum install i3 i3status i3lock
+    [root]# yum install i3 i3status i3lock py3status dconf dconf-editor
     [root]# yum install powertop preload
     [root]# yum install newsbeuter
 
