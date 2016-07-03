@@ -8,12 +8,12 @@ URxvt.buffered:          true
 URxvt.iso14755:          false
 URxvt.iso14755_52:       false
 
-! see https://gist.github.com/yevgenko/1167205
-! URxvt.allow_bold: false
+URxvt.allow_bold: false
 
 URxvt.imLocale:         fr_FR.utf8
 URxvt.font:             xft:terminus:pixelsize=14:antialias=false
-URxvt.fontBold:         xft:terminus:pixelsize=14:antialias=false:style=bold
+!URxvt.fontBold:         xft:terminus:pixelsize=14:antialias=false:style=bold
+URxvt.fontBold:         xft:terminus:pixelsize=14:antialias=false
 URxvt.scrollBar:        false
 URxvt.secondaryScreen:  true
 URxvt.secondaryScroll:  false

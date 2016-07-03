@@ -1,6 +1,6 @@
 ! path  $HOME/.Xresources
 ! usage xrdb $HOME/.Xresources
 
-#include "Xresources.xft"
-#include "Xresources.urxvt"
-#include "Xresources.urxvt.solarized"
+#include ".Xresources.xft"
+#include ".Xresources.urxvt"
+#include ".Xresources.urxvt.solarized"
