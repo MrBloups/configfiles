@@ -13,6 +13,7 @@ fi
 cp -i -v 10-$ID.conf /etc/sysctl.d/
 cp -i -v $ID.conf /etc/modprobe.d/
 cp -i -v rc.local /etc/rc.d/
+cp -i -v 20-natural-scrolling.conf /etc/X11/xorg.conf.d
 
 # configure rc.local service
 chmod 755 /etc/rc.d/rc.local
