@@ -11,14 +11,13 @@ font $font
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec urxvt256cc
+bindsym $mod+Return exec urxvtc
 
 # kill focused window
 bindsym $mod+Shift+a kill
 
 # start dmenu (see manpages i3-dmenu-desktop)
 bindsym $mod+d exec --no-startup-id i3-dmenu-desktop --entry-type=command \
-                                                     --dmenu="dmenu -i -p '' -fn '$xfont' -nb '#E9E9E9' -nf '#3C6EB4' -sb '#3C6EB4' -sf '#E9E9E9'"
 
 # change focus
 bindsym $mod+Left focus left
@@ -128,8 +127,7 @@ bar {
     font $font
     position top
     tray_output primary
-    #status_command i3status -c ~/.i3/status.conf
-    status_command py3status -c ~/.i3/py3status.conf
+    status_command py3status -c ~/.config/i3/py3status.conf --include ~/.config/i3/py3status
     bindsym button4 nop
     bindsym button5 nop
     separator_symbol " ❭ "
@@ -148,7 +146,6 @@ bar {
 }
 
 # window decoration
-#client.focused          #BFD7EA #BFD7EA #4D4D4C #E9E9E9 #D6D6D6
 client.focused          #3C6EB4 #3C6EB4 #E9E9E9 #E9E9E9 #D6D6D6
 client.focused_inactive #D6D6D6 #E9E9E9 #8E908C #E9E9E9 #E9E9E9
 client.unfocused        #D6D6D6 #E9E9E9 #8E908C #E9E9E9 #E9E9E9
@@ -167,16 +164,12 @@ popup_during_fullscreen smart
 
 force_display_urgency_hint 2000 ms
 
-#for_window [class=".*"] title_format "<span font='Cantarell Bold 10'> %title</span>"
 for_window [class=".*"]      title_format "   %title"
 for_window [class="URxvt"]   title_format "   %title"
 for_window [class="Firefox"] title_format "   %title"
 
 assign [class="URxvt"]   1
 assign [class="Firefox"] 2
-
-#for_window [class="URxvt"] border normal 1
-#for_window [class="Firefox" window_type="normal" window_role="browser"] border pixel 1
 
 bindsym $mod+m move scratchpad
 bindsym $mod+o scratchpad show
@@ -197,26 +190,17 @@ bindsym XF86MonBrightnessDown exec xbacklight -dec 5
 
 # turn on/off redshift
 bindsym $mod+x exec pkill -USR1 redshift
-#bindsym $mod+Shift+x exec xset +dpms
 
 # gnome
 #exec --no-startup-id /usr/bin/gnome-session
-#exec --no-startup-id /usr/libexec/gnome-settings-daemon
+exec --no-startup-id /usr/libexec/gnome-settings-daemon
 #exec --no-startup-id eval $(gnome-keyring-daemon --start --components=pkcs11,secret,ssh)
-
-# natural scrolling (libinput and synclient methods)
-#exec --no-startup-id xinput --set-prop 12 --type=int --format=8 "libinput Natural Scrolling Enabled" 1
-exec --no-startup-id synclient VertScrollDelta=-106 HorizScrollDelta=-106 VertTwoFingerScroll=1
 
 exec --no-startup-id pactl set-sink-volume 0 '50%'
 exec --no-startup-id pactl set-sink-mute 0 1
 exec --no-startup-id xbacklight -set 15
-#exec --no-startup-id xset dpms 60 0 0
-#exec --no-startup-id xset -b
-#exec --no-startup-id xcompmgr -n 2>/dev/null
-#exec --no-startup-id feh --bg-fill /home/rhel-day.jpg
-exec --no-startup-id feh --bg-fill /usr/share/backgrounds/default.png
-#exec --no-startup-id urxvtd -q -f -o
-exec --no-startup-id urxvt256cd -q -f -o
+exec --no-startup-id xcompmgr -n 2>/dev/null
+exec --no-startup-id feh --bg-fill /usr/share/backgrounds/f24/default/wide/f24.png
+exec --no-startup-id urxvtd -q -f -o
 exec --no-startup-id redshift
 
