@@ -12,11 +12,12 @@ import json
 class Py3status:
     """
     """
-    cache_timeout = 0.5
+    cache_timeout = 1.0
     color = None
 
     def __init__(self):
         self.full_text = u''
+        self._perform = False
 
     def __get_active_workspace(self):
         """
@@ -45,26 +46,34 @@ class Py3status:
         """
         if tree is None:
             tree = self.__get_active_workspace()
+            self._perform = True
+            self.full_text = u''
 
         if isinstance(tree, list):
             tree = {'list': tree}
 
         if 'focused' in tree:
             if tree['focused'] == True:
-                if 'name' in tree:
-                    self.full_text = tree['name']
+                if 'name' in tree and 'title_format' in tree:
+                    self.full_text = tree['title_format'].replace('%title', tree['name'])
+                    self._perform = False
 
-        for nodes in ['nodes', 'floating_nodes', 'list']:
-            if nodes in tree:
-                for node in tree[nodes]:
-                    self.__get_active_window_title(node)
+
+        if self._perform is True:
+            for nodes in ['nodes', 'floating_nodes', 'list']:
+                if nodes in tree:
+                    for node in tree[nodes]:
+                        self.__get_active_window_title(node)
 
 
     def title(self, i3s_output_list, i3s_config):
         try:
             # title
             self.__get_active_window_title()
-            #self.color = i3s_config["color_good"]
+            #old_full_text = self.full_text
+            #while self.full_text == old_full_text :
+            #    self.__get_active_window_title()
+            #    sleep(self.cache_timeout)
         except Exception as e:
             self.full_text = u"#ERR {}".format(e)
             self.color = i3s_config["color_bad"]
@@ -82,4 +91,4 @@ if __name__ == "__main__":
 
     while True:
         print(i3s.title([], {}))
-        sleep(1)
+        sleep(2)
