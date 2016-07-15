@@ -1,9 +1,0 @@
-# path $HOME/.xinitrc
-
-xrdb -merge ~/.Xresources 
-
-# fonts
-xset +fp /usr/share/fonts/local
-xset fp rehash
-
-exec i3

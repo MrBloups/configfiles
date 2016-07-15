@@ -1,6 +1,6 @@
 #!/bin/sh
 
-cp -v `realpath vimrc` $HOME/.vimrc
+ln -sv `realpath vimrc` $HOME/.vimrc
 
 mkdir -p $HOME/.vim/colors
-cp -v `realpath solarized.vim` $HOME/.vim/colors/
+ln -sv `realpath solarized.vim` $HOME/.vim/colors/
