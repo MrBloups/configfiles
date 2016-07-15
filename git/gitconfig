@@ -2,7 +2,7 @@
 
 [user]
     name = mrbloups
-    email = your.name@email.com
+    email = {email}
 [core]
     editor = vim
     excludesfile = ~/.gitignore

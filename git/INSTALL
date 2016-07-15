@@ -1,10 +1,21 @@
 #!/bin/sh
 
+
+if [ $# -ne 1 ]; then
+    echo "usage: INSTALL your.name@email.com"
+    exit 1
+fi
+
+echo ""
 cp -v `realpath gitconfig` $HOME/.gitconfig
 cp -v `realpath gitignore` $HOME/.gitignore
 
-echo ""
-echo "edit your email address in '$HOME/.gitconfig'."
+# edit email address
+sed -i s/{email}/$1/ $HOME/.gitconfig
+if [ $? -eq 0 ]; then
+    echo ""
+    echo "email: $1"
+fi
 
 {
     echo "# git prompt"
@@ -14,3 +25,5 @@ echo "edit your email address in '$HOME/.gitconfig'."
 
 echo ""
 echo "update $HOME/.bashrc"
+
+exit 0
