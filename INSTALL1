@@ -1,0 +1,21 @@
+#!/bin/sh
+
+# from fedora workstation netinstall
+# standard X desktop with firefox
+
+if [ `id --user` -ne 0 ]; then
+    echo "the script must be run as root."
+    exit 1
+fi
+
+# bug on F24 workstation netinstall
+#LANG=en_US.UTF-8 dnf install -y glibc-langpack-fr
+
+dnf clean all -y
+dnf install -y py3status dconf
+dnf install -y terminus-fonts fontawesome-fonts breeze-icon-theme
+dnf install -y vim git man-pages-fr
+dnf install -y redshift xbacklight
+dnf install -y preload powertop
+
+exit 0

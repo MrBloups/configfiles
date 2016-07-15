@@ -1,0 +1,44 @@
+" Colors
+set t_Co=256
+syntax enable
+set background=light
+"let g:solarized_termcolors=16
+colorscheme solarized
+"hi Normal ctermfg=black
+
+" Enable autoindent
+set ai
+" Disable vi-compatible
+set nocompatible
+" Fast terminal connection
+set ttyfast
+" show lines number
+set nu
+" Show cursor position
+set ruler
+" No wrapping
+set nowrap
+" Show command
+set showcmd
+" Better command-line completion
+set wildmenu
+" Set tabs
+set tabstop=4
+set shiftwidth=4
+set expandtab
+set smarttab
+" Show no printable characters
+"set listchars=nbsp:¤,trail:¤,tab:^^
+set listchars=nbsp:·,trail:·,tab:\ \ 
+set list
+" search
+set ignorecase " insensitive
+set smartcase  " smart
+set incsearch
+set hlsearch
+
+" encoding
+set encoding=utf-8
+set fileencoding=utf-8
+
+set colorcolumn=80

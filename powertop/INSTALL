@@ -1,0 +1,24 @@
+#!/bin/sh
+
+
+if [ `id --user` -ne 0 ]; then
+    echo "the script must be run as root."
+    exit 1
+fi
+
+# it is possible to use powertop service
+# 'systemctl enable powertop'
+# but in my case it dont turn on all tweaks
+
+{
+    echo "#!/bin/sh"
+    echo ""
+    echo "powertop --auto-tune 2>/dev/null"
+    echo ""
+    echo "exit 0"
+} > /etc/rc.d/rc.local
+
+chmod 755 /etc/rc.d/rc.local
+
+systemctl enable rc-local
+systemctl start rc-local

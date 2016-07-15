@@ -1,0 +1,10 @@
+#!/bin/sh
+
+
+if [ `id --user` -ne 0 ]; then
+    echo "the script must be run as root."
+    exit 1
+fi
+
+systemctl enable preload
+systemctl start preload

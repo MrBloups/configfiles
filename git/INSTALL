@@ -1,0 +1,16 @@
+#!/bin/sh
+
+cp -v `realpath gitconfig` $HOME/.gitconfig
+cp -v `realpath gitignore` $HOME/.gitignore
+
+echo ""
+echo "edit your email address in '$HOME/.gitconfig'."
+
+{
+    echo "# git prompt"
+    echo "source $(realpath gitrc)"
+    echo ""
+} >> $HOME/.bashrc
+
+echo ""
+echo "update $HOME/.bashrc"

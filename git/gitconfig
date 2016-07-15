@@ -1,7 +1,7 @@
 # path $HOME/.gitconfig
 
 [user]
-    name = MrBloups
+    name = mrbloups
     email = your.name@email.com
 [core]
     editor = vim
