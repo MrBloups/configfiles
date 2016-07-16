@@ -1,0 +1,21 @@
+#!/bin/sh
+
+# you must be root
+if [ `id -u` -ne 0 ]; then
+    echo "this script must be run as root."
+    exit 1
+fi
+
+# install rpmfusion repo
+dnf install -y http://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm
+dnf install -y http://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
+
+# install ffmpeg for openh264
+dnf install -y ffmpeg-libs
+
+# install codecs
+#dnf install gstreamer1-{libav,vaapi} gstreamer1-plugins-{good,good-extras,ugly}
+# optional codecs
+#dnf install gstreamer1-plugins-bad-{free,freeworld}
+
+exit 0
