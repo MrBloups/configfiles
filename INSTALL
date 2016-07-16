@@ -14,7 +14,7 @@ fi
 dnf clean all -y
 
 dnf install -y firefox
-dnf install -y py3status dconf
+dnf install -y py3status dconf gnome-keyring
 dnf install -y terminus-fonts fontawesome-fonts breeze-icon-theme
 dnf install -y vim git man-pages-fr
 dnf install -y redshift xbacklight

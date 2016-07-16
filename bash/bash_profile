@@ -1,4 +1,0 @@
-# path $HOME/.bash_profile
-
-# auto launch i3
-[[ -z "$DISPLAY"  && XDG_VTNR -eq 1 ]] && exec startx 1>/dev/null 2>&1'

@@ -1,0 +1,32 @@
+#!/bin/sh
+
+# append bashrc
+{
+    echo ""
+    echo "# urxvt: prompt in window title"
+    echo "if [[ "\$TERM" =~ ^rxvt ]]; then"
+    echo "    PROMPT_COMMAND+=';'"
+    echo "    PROMPT_COMMAND+='echo -ne \"\e]0;\$USER@\$HOSTNAME:\$PWD\007\"'"
+    echo "fi"
+    echo ""
+    echo "# vim as default editor"
+    echo "export EDITOR=vim"
+    echo "export VISUAL=\$EDITOR"
+    echo ""
+    echo "# alias"
+    echo "alias update='su -c \"dnf update\"'"
+    echo "alias check-updates='dnf check-update'"
+    echo "alias check-updates-testing='dnf check-update --disablerepo=updates --enablerepo=updates-testing'"
+    echo "alias up='nmcli connection up \$1'"
+    echo "alias down='nmcli connection down \$1'"
+} >> $HOME/.bashrc
+
+# append bash_profile
+{
+    echo ""
+    echo "# gnome-keyring"
+    echo "if [ -n "\$DESKTOP_SESSION" ]; then"
+    echo "    eval \$(gnome-keyring-daemon --start --components=pkcs11,secrets,ssh)"
+    echo "    export SSH_AUTH_SOCK"
+    echo "fi"
+} >> $HOME/.bash_profile
