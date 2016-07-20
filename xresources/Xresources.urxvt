@@ -10,6 +10,9 @@ URxvt.iso14755_52:       false
 
 URxvt.allow_bold: false
 
+URxvt.fading: 50
+URxvt.fadeColor: #E9E9E9
+
 URxvt.imLocale:         fr_FR.utf8
 URxvt.font:             xft:terminus:pixelsize=14:antialias=false
 !URxvt.fontBold:         xft:terminus:pixelsize=14:antialias=false:style=bold
