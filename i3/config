@@ -18,6 +18,7 @@ bindsym $mod+Shift+a kill
 
 # start dmenu (see manpages i3-dmenu-desktop)
 bindsym $mod+d exec --no-startup-id i3-dmenu-desktop --entry-type=command \
+                                                     --dmenu="dmenu -i -p '' -fn '$xfont' -nb '#E9E9E9' -nf '#3C6EB4' -sb '#3C6EB4' -sf '#E9E9E9'"
 
 # change focus
 bindsym $mod+Left focus left
