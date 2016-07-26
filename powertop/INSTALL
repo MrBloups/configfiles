@@ -10,15 +10,15 @@ fi
 # 'systemctl enable powertop'
 # but in my case it dont turn on all tweaks
 
-{
-    echo "#!/bin/sh"
-    echo ""
-    echo "powertop --auto-tune 2>/dev/null"
-    echo ""
-    echo "exit 0"
-} > /etc/rc.d/rc.local
+#{
+#    echo "#!/bin/sh"
+#    echo ""
+#    echo "powertop --auto-tune 2>/dev/null"
+#    echo ""
+#    echo "exit 0"
+#} > /etc/rc.d/rc.local
 
-chmod 755 /etc/rc.d/rc.local
+#chmod 755 /etc/rc.d/rc.local
 
-systemctl enable rc-local
-systemctl start rc-local
+#systemctl enable rc-local
+#systemctl start rc-local

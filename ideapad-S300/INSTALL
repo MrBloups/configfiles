@@ -12,15 +12,17 @@ fi
 ## copy configfile
 cp -i -v 10-$ID.conf /etc/sysctl.d/
 cp -i -v $ID.conf /etc/modprobe.d/
-#cp -i -v rc.local /etc/rc.d/
+cp -i -v rc.local /etc/rc.d/
 cp -i -v 20-natural-scrolling.conf /etc/X11/xorg.conf.d
 
 # configure rc.local service
-#chmod 755 /etc/rc.d/rc.local
-#systemctl enable rc-local
+chmod 755 /etc/rc.d/rc.local
+systemctl enable rc-local
 
 # tweak fstab
 sh fstab.sh
+# tweak grub
+sh grub.sh
 
 # disable services
 sh unwanted-services.sh

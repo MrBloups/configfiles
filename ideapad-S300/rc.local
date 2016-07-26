@@ -11,4 +11,6 @@
 
 powertop --auto-tune 2>/dev/null
 
+echo powersave > /sys/module/pcie_aspm/parameters/policy
+
 exit 0
