@@ -32,7 +32,7 @@ from time import time
 class Py3status:
     """
     """
-    cache_timeout = 0.5
+    cache_timeout = 5
     color = None
     battery_name = "BAT1"
 

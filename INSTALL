@@ -15,6 +15,7 @@ dnf clean all -y
 
 dnf install -y firefox mupdf
 dnf install -y xorg-x11-drv-libinput
+dnf install -y libva-intel-driver libvdpau-va-gl
 dnf install -y py3status dconf gnome-keyring
 dnf install -y terminus-fonts fontawesome-fonts breeze-icon-theme
 dnf install -y vim git man-pages-fr
@@ -22,11 +23,7 @@ dnf install -y redshift xbacklight pass
 dnf install -y preload powertop
 
 # devel
-dnf install -y gcc rpm-build rpmdevtools
-# devel compton
-dnf install -y libX11-devel libXcomposite-devel libXdamage-devel libXrender-devel
-dnf install -y libXext-devel libXrandr-devel libXinerama-devel
-dnf install -y libconfig-devel dbus-devel mesa-libGL-devel pcre-devel
+dnf install -y gcc rpm-build rpmdevtools mock
 
 # remove
 dnf remove -y awesome dwm openbox-* ratpoison xmonad-*

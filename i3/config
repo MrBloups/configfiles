@@ -128,7 +128,8 @@ bar {
     font $font
     position top
     tray_output primary
-    status_command py3status -c ~/.config/i3/py3status.conf --include ~/.config/i3/py3status
+    #status_command py3status -c ~/.config/i3/py3status.conf --include ~/.config/i3/py3status
+    status_command i3status -c ~/.config/i3/i3status.conf
     bindsym button4 nop
     bindsym button5 nop
     separator_symbol " ❭ "
@@ -170,12 +171,14 @@ for_window [class="URxvt"]   title_format "   %title"
 for_window [class="Firefox"] title_format "   %title"
 
 assign [class="URxvt"]   1
-assign [class="Firefox"] 2
+assign [class="Uzbl"]    2
+assign [class="Firefox"] 3
 
 bindsym $mod+m move scratchpad
 bindsym $mod+o scratchpad show
 
-bindsym $alt+f exec firefox
+#bindsym $alt+f exec firefox
+bindsym $mod+w exec uzbl-browser
 
 bindsym $alt+Up border normal 1
 bindsym $alt+Down border pixel 1
@@ -205,5 +208,6 @@ exec --no-startup-id xbacklight -set 15
 #exec --no-startup-id xcompmgr -n 2>/dev/null
 #exec --no-startup-id feh --bg-fill /usr/share/backgrounds/f24/default/wide/f24.png
 exec --no-startup-id urxvtd -q -f -o
-exec --no-startup-id redshift
+#exec --no-startup-id redshift
 
+exec --no-startup-id compton -b --config ~/.config/compton.conf
