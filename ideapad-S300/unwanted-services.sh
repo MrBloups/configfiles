@@ -25,3 +25,12 @@ systemctl disable avahi-daemon.service
 systemctl disable multipathd.service
 systemctl disable dmraid-activation.service
 systemctl disable sshd.service
+
+systemctl disable spice-vdagentd.service
+systemctl disable iscsid.socket
+systemctl disable iscsiuio.socket
+systemctl disable vmtoolsd.service
+#systemctl disable timedatex.service
+systemctl disable rpcbind.socket
+
+

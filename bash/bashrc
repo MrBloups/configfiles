@@ -25,7 +25,7 @@ export PROMPT_COMMAND='__git_ps1 "[\[\e[1m\]\u@\h \w\[\e[0m\]]" "\\\$ "'
 if [[ "$TERM" =~ ^rxvt ]]; then
     PROMPT_COMMAND+=';'
     PROMPT_COMMAND+='echo -ne "\e]0;$USER@$HOSTNAME:$PWD\007"'
-    eval `dircolors $HOME/.config/i3/dircolors.ansi-light`
+    eval `dircolors $HOME/Gits/configfiles/bash/dircolors.ansi-light`
 fi
 
 # vim

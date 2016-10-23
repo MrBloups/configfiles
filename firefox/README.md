@@ -51,6 +51,10 @@ Disable media auto play
 Go to about:config and change the value of string **media.autoplay.enabled** from **normal** to **false**.
 
 
+Graphics acceleration with Skia
+===============================
+
+* gfx.content.azure.backends: skia # default cairo
 
 Useful links
 ------------

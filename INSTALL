@@ -27,5 +27,6 @@ dnf install -y gcc rpm-build rpmdevtools mock
 
 # remove
 dnf remove -y awesome dwm openbox-* ratpoison xmonad-*
+dnf remove qemu-guest-agent telnet sssd hyperv* open-vm-tools-* spice-vdagent quota
 
 exit 0
