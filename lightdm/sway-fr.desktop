@@ -1,0 +1,6 @@
+# path /usr/share/wayland-sessions/
+[Desktop Entry]
+Name=Sway français
+Comment=SirCmpwn's Wayland window manager
+Exec=XKB_DEFAULT_LAYOUT=fr XKB_DEFAULT_VARIANT=oss XKB_DEFAULT_MODEL=pc105 sway
+Type=Application
