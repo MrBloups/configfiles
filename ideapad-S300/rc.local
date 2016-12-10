@@ -1,16 +1,9 @@
 #!/bin/sh
 
-## rc.local for ideapad S300
-## work with systemd service rc-local
-## path /etc/rc.d/rc.local
-#
-## INSTALL
-## chmod 755 /etc/rc.d/rc.local
-## chown root:root /etc/rc.d/rc.local
-## systemctl enable rc-local
+# chmod 755 /etc/rc.d/rc.local
+# systemctl enable rc-local
 
+sleep 5
 powertop --auto-tune 2>/dev/null
-
-echo powersave > /sys/module/pcie_aspm/parameters/policy
 
 exit 0
