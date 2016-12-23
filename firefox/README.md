@@ -52,9 +52,14 @@ Go to about:config and change the value of string **media.autoplay.enabled** fro
 
 
 Graphics acceleration with Skia
-===============================
+-------------------------------
 
 * gfx.content.azure.backends: skia # default cairo
+
+Force enable e10s
+-----------------
+
+Go to about:config and add a new boolean pref : browser.tabs.remote.force-enable = true
 
 Useful links
 ------------
