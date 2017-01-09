@@ -171,6 +171,14 @@ for_window [class=".*"]      title_format "   %title"
 for_window [class="URxvt"]   title_format "   %title"
 for_window [class="Firefox"] title_format "   %title"
 
+# floating windows
+for_window [window_role="pop-up"] floating enable
+for_window [window_role="bubble"] floating enable
+for_window [window_role="task_dialog"] floating enable
+for_window [window_role="Preferences"] floating enable
+for_window [window_type="dialog"] floating enable
+for_window [window_type="menu"] floating enable
+
 assign [class="URxvt"]    1
 assign [class="Firefox"]  2
 
