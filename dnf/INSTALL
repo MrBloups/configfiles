@@ -6,6 +6,15 @@ if [ `id -u` -ne 0 ]; then
     exit 1
 fi
 
+# configure dnf
+DNF_CONF=/etc/dnf/dnf.conf
+cp $DNF_CONF ${DNF_CONF}.save
+cat << EOF >> $DNF_CONF
+
+deltarpm=False
+fastestmirror=True
+EOF
+
 # install rpmfusion repo
 dnf install -y http://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm
 dnf install -y http://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
