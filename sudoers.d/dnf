@@ -1,0 +1,5 @@
+# path /etc/sudoers/dnf
+
+mrbloups ALL = (root) NOPASSWD: /usr/bin/dnf install *
+mrbloups ALL = (root) NOPASSWD: /usr/bin/dnf remove *
+mrbloups ALL = (root) NOPASSWD: /usr/bin/dnf update
