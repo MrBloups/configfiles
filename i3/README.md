@@ -26,3 +26,8 @@ Inserting a Unicode character in VIM
 In INSERT MODE type:
 
     Ctrl + v, u, unicode code
+
+See
+---
+
+https://faq.i3wm.org/question/4126/sessions-environment-variables.1.html
