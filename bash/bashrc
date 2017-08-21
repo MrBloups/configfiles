@@ -28,6 +28,12 @@ if [[ "$TERM" =~ ^rxvt ]]; then
     eval `dircolors $HOME/Gits/configfiles/bash/dircolors.ansi-light`
 fi
 
+# keyring daemon in i3 environnement
+if [ "$DESKTOP_SESSION" = "i3" ];then
+    eval $(gnome-keyring-daemon --start)
+    export SSH_AUTH_SOCK
+fi
+
 # vim
 export EDITOR=vim
 export VISUAL=$EDITOR
