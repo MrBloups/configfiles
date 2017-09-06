@@ -6,8 +6,8 @@ install freetype-freeworld
 
 Configure freeworld for your session
 
-    $ gsettings reset org.gnome.settings-daemon.plugins.xsettings hinting
     $ gsettings reset org.gnome.settings-daemon.plugins.xsettings rgba-order
+    $ gsettings set org.gnome.settings-daemon.plugins.xsettings hinting slight
     $ gsettings set org.gnome.settings-daemon.plugins.xsettings antialiasing rgba
     
     $ cat >> $HOME/.Xresources << EOF
