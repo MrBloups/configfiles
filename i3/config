@@ -11,7 +11,7 @@ font $font
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec urxvtc
+bindsym $mod+Return exec gnome-terminal
 
 # kill focused window
 bindsym $mod+Shift+a kill
@@ -39,13 +39,14 @@ bindsym $mod+h split v
 bindsym $mod+v split h
 
 # enter fullscreen mode for the focused container
-bindsym $mod+f fullscreen
+#bindsym $mod+f fullscreen
 
 # change container layout (stacked, tabbed, toggle split)
 #bindsym $mod+s layout stacking
 bindsym $mod+z layout tabbed
 #bindsym $mod+e layout toggle split
-bindsym $mod+e layout default
+#bindsym $mod+e layout default
+bindsym $mod+t layout toggle split
 
 # toggle tiling / floating
 bindsym $mod+Shift+space floating toggle
@@ -99,9 +100,9 @@ bindsym $mod+Shift+ccedilla move container to workspace $ws9
 bindsym $mod+Shift+agrave move container to workspace $ws0
 
 # reload the configuration file
-bindsym $mod+Shift+c reload
+bindsym Control+$alt+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
-bindsym $mod+Shift+r restart
+bindsym Control+$alt+r restart
 
 # logout mode
 set $logout "  Quitter la session ? [Entrée] Quitter - [Échap] Annuler"
@@ -109,17 +110,18 @@ mode $logout {
     bindsym Return exec i3-msg exit
     bindsym Escape mode "default"
 }
-bindsym $mod+Shift+e mode $logout
+bindsym Control+$alt+e mode $logout
 
 
 # poweroff mode
 set $poweroff "  Éteindre l'ordinateur ? [Entrée] Éteindre - [r] Redémarrer - [Échap] Annuler"
 mode $poweroff {
-    bindsym r exec systemctl reboot
-    bindsym Return exec systemctl poweroff
+    bindsym r exec --no-startup-id systemctl reboot, mode "default"
+    bindsym Return exec --no-startup-id systemctl poweroff -i, mode "default"
     bindsym Escape mode "default"
 }
-bindsym $mod+Shift+z mode $poweroff
+#bindsym $mod+Shift+z mode $poweroff
+bindsym Control+$alt+Delete mode $poweroff
 
 
 # resize window (you can also use the mouse for that)
@@ -140,23 +142,24 @@ bar {
     font $font
     position top
     tray_output primary
-    #status_command py3status -c ~/.config/i3/py3status.conf --include ~/.config/i3/py3status
     status_command i3status -c ~/.config/i3/i3status.conf
     bindsym button4 nop
     bindsym button5 nop
-    #separator_symbol " ❭ "
     separator_symbol " "
 
     colors {
         background #E9E9E9
         statusline #4D4D4C
         separator  #D6D6D6
-        #focused_workspace  #D6D6D6 #BFD7EA #4D4D4C
-        focused_workspace  #E9E9E9 #3C6EB4 #E9E9E9
-        active_workspace   #E9E9E9 #A5A5A5 #E9E9E9
-        inactive_workspace #E9E9E9 #E9E9E9 #4D4D4C
-        urgent_workspace   #E9E9E9 #D54E53 #E9E9E9
         binding_mode       #D6D6D6 #F3FFEE #4D9A26
+        #focused_workspace  #E9E9E9 #3C6EB4 #E9E9E9
+        #active_workspace   #E9E9E9 #A5A5A5 #E9E9E9
+        #inactive_workspace #E9E9E9 #E9E9E9 #4D4D4C
+        #urgent_workspace   #E9E9E9 #D54E53 #E9E9E9
+        focused_workspace  #E9E9E9 #E9E9E9 #3C6EB4
+        active_workspace   #E9E9E9 #E9E9E9 #4D4D4C
+        inactive_workspace #E9E9E9 #E9E9E9 #8E908C
+        urgent_workspace   #E9E9E9 #E9E9E9 #D54E53
     }
 }
 
@@ -184,6 +187,9 @@ for_window [class=".*"]      title_format "   %title"
 for_window [class="URxvt"]   title_format "   %title"
 for_window [class="Firefox"] title_format "   %title"
 
+# always center floating windows
+for_window [floating] move position center
+
 # floating windows
 for_window [window_role="pop-up"] floating enable
 for_window [window_role="bubble"] floating enable
@@ -192,13 +198,14 @@ for_window [window_role="Preferences"] floating enable
 for_window [window_type="dialog"] floating enable
 for_window [window_type="menu"] floating enable
 
-assign [class="URxvt"]    $ws1
-assign [class="Firefox"]  $ws2
+assign [class="Gnome-terminal"] $ws1
+assign [class="Firefox"] $ws2
 
 bindsym $mod+m move scratchpad
 bindsym $mod+o scratchpad show
 
-bindsym $alt+f exec firefox
+bindsym $mod+e exec nautilus
+bindsym $mod+f exec firefox
 
 bindsym $alt+Up border normal 1
 bindsym $alt+Down border pixel 1
@@ -209,24 +216,20 @@ bindsym XF86AudioRaiseVolume exec pactl set-sink-volume 0 '+5%'
 bindsym XF86AudioMute exec pactl set-sink-mute 0 toggle
 
 # brightness control
-bindsym XF86MonBrightnessUp exec xbacklight -inc 5
-bindsym XF86MonBrightnessDown exec xbacklight -dec 5
+#bindsym XF86MonBrightnessUp exec xbacklight -inc 5
+#bindsym XF86MonBrightnessDown exec xbacklight -dec 5
 
 # turn on/off redshift
 bindsym $mod+x exec pkill -USR1 redshift
 
 # gnome
-#exec --no-startup-id /usr/bin/gnome-session
-#exec --no-startup-id /usr/libexec/gnome-settings-daemon
-#exec --no-startup-id eval $(gnome-keyring-daemon --start --components=pkcs11,secret,ssh)
+exec --no-startup-id /usr/libexec/gsd-xsettings
 
-#exec --no-startup-id synclient VertScrollDelta=-106 HorizScrollDelta=-106 VertTwoFingerScroll=1
+# touchpad natural scrolling
+exec --no-startup-id xinput set-prop 'SynPS/2 Synaptics TouchPad' 'libinput Natural Scrolling Enabled' 1
 
+exec --no-startup-id compton -b --config ~/.config/compton.conf
 exec --no-startup-id pactl set-sink-volume 0 '50%'
 exec --no-startup-id pactl set-sink-mute 0 1
-exec --no-startup-id xbacklight -set 15
-exec --no-startup-id compton -b --config ~/.config/compton.conf
-#exec --no-startup-id feh --bg-fill /usr/share/backgrounds/f24/default/wide/f24.png
-exec --no-startup-id urxvtd -q -f -o
+exec --no-startup-id feh --bg-fill /usr/share/backgrounds/f26/default/wide/f26.png
 exec --no-startup-id redshift
-
