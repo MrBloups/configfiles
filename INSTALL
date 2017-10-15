@@ -15,18 +15,21 @@ dnf clean all -y
 
 dnf install -y firefox mupdf
 dnf install -y xorg-x11-drv-libinput
-dnf install -y libva-intel-driver libvdpau-va-gl
 dnf install -y py3status dconf gnome-keyring
 dnf install -y terminus-fonts fontawesome-fonts breeze-icon-theme
 dnf install -y vim git man-pages-fr
 dnf install -y redshift xbacklight pass
-dnf install -y preload powertop
+dnf install -y preload powertop udisks
+dnf install -y gstreamer1-vaapi libva-intel-driver
 
 # devel
 dnf install -y gcc rpm-build rpmdevtools mock
+dnf install -y postgresql-server
 
 # remove
 dnf remove -y awesome dwm openbox-* ratpoison xmonad-*
-dnf remove qemu-guest-agent telnet sssd hyperv* open-vm-tools-* spice-vdagent quota
+dnf remove -y qemu-guest-agent telnet sssd hyperv* open-vm-tools-* spice-vdagent quota
+dnf remove -y libreoffice*
+dnf remove -y httpd
 
 exit 0
