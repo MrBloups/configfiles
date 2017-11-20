@@ -1,0 +1,15 @@
+/*
+ * path $HOME/.config/gtk-3.0/gtk.css
+ * reduce titlebar height
+ */
+
+headerbar.default-decoration {
+    padding-top: 3px;
+    padding-bottom: 5px;
+    min-height: 0px;
+}
+
+headerbar.default-decoration button.titlebutton {
+    padding: 0px;
+    min-height: 0px;
+}
