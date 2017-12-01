@@ -40,3 +40,11 @@ notebook button {
   min-width: 0;
   min-height: 0;
 }
+
+/*
+ * increase padding in gnome terminal
+ */
+
+vte-terminal {
+    padding: 2px;
+}
