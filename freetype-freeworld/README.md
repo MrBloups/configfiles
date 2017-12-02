@@ -15,3 +15,14 @@ Configure freeworld for your session
     $ gsettings set org.gnome.settings-daemon.plugins.xsettings antialiasing rgba
 
     $ echo "Xft.lcdfilter: lcddefault" > ~/.Xresources
+
+Verification
+
+    $ xrdb -query
+    Xft.dpi:	96
+    Xft.hinting:	1
+    Xft.hintstyle:	hintslight
+    Xft.lcdfilter:	lcddefault
+    Xft.antialias:	1
+    Xft.rgba:	rgb
+
