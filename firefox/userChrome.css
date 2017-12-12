@@ -16,3 +16,11 @@
 
 /* fix color to grey for personal bookmarks separators */
 #personal-bookmarks toolbarseparator { opacity:0.25 !important; }
+
+/*
+ * for firefox 57
+ * when widget.allow-client-side-decoration = true
+ * improve tabs rendering
+ */
+#nav-bar { border-top-width: 0 !important; }
+#TabsToolbar { margin-left: 8px !important; }
