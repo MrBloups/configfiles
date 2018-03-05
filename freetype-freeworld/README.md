@@ -28,3 +28,8 @@ Verification
     Xft.antialias:	1
     Xft.rgba:	rgb
 
+    $ gsettings get org.gnome.settings-daemon.plugins.xsettings antialiasing
+    'rgba'
+    
+    gsettings get org.gnome.settings-daemon.plugins.xsettings hinting
+    'slight'
