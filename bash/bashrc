@@ -19,7 +19,8 @@ export GIT_PS1_SHOWDIRTYSTATE=true
 export GIT_PS1_SHOWSTASHSTATE=true
 export GIT_PS1_SHOWUNTRACKEDFILES=true
 export GIT_PS1_SHOWUPSTREAM=verbose
-export PROMPT_COMMAND='__git_ps1 "[\[\e[1m\]\u@\h \w\[\e[0m\]]" "\\\$ "'
+#export PROMPT_COMMAND='__git_ps1 "[\[\e[1m\]\u@\h \w\[\e[0m\]]" "\\\$ "'
+export PROMPT_COMMAND='__vte_prompt_command;__git_ps1 "[\[\e[0;37m\]\u@\h \w\[\e[0m\]]" "\\\$ "'
 
 # urxvt: prompt in title window
 if [[ "$TERM" =~ ^rxvt ]]; then
