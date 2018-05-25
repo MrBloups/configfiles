@@ -7,4 +7,5 @@ export GIT_PS1_SHOWDIRTYSTATE=true
 export GIT_PS1_SHOWSTASHSTATE=true
 export GIT_PS1_SHOWUNTRACKEDFILES=true
 export GIT_PS1_SHOWUPSTREAM=verbose
-export PROMPT_COMMAND='__git_ps1 "[\[\e[1m\]\u@\h \w\[\e[0m\]]" "\\\$ "'
+# changer le prompt pour integrer git tout en conservant le window title
+export PROMPT_COMMAND='__vte_prompt_command;__git_ps1 "[\[\e[0;37m\]\u@\h \w\[\e[0m\]]" "\\\$ "'
