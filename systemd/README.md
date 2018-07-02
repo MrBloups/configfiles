@@ -1,4 +1,4 @@
 Install ntsysv for remove unused services
 
-  # dnf install ntsysv -y
-  # ntsysv
+    # dnf install ntsysv -y
+    # ntsysv
