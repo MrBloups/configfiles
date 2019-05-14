@@ -6,21 +6,10 @@
  */
 
 /* set default namespace to XUL */
-@namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
-
-/* change UI font */
-* { font: 12px DejaVu Sans !important; }
+/*@namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");*/
 
 /* hide folder icon in personal bookmark */
 #personal-bookmarks toolbarbutton[type=menu] .toolbarbutton-icon { display:none !important; }
 
 /* fix color to grey for personal bookmarks separators */
 #personal-bookmarks toolbarseparator { opacity:0.25 !important; }
-
-/*
- * for firefox 57
- * when widget.allow-client-side-decoration = true
- * improve tabs rendering
- */
-#nav-bar { border-top-width: 0 !important; }
-#TabsToolbar { margin-left: 8px !important; }
